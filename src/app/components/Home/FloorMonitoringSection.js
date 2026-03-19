@@ -5,11 +5,11 @@ import { User, Check, AlertCircle } from "lucide-react";
 const FloorMonitoringSection = () => {
   return (
     <section className="bg-[#F8F9FB] dark:bg-gray-900 py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16">
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-14 lg:gap-16">
           
           {/* Left Side: Text Content */}
-          <div className="w-full lg:w-1/2 flex flex-col" data-aos="fade-right">
+          <div className="w-full lg:w-[52%] flex flex-col" data-aos="fade-right">
             {/* Badge */}
             <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-[#FFF9E5] text-[#D4AF37] text-[10px] font-black tracking-[0.2em] uppercase mb-6 shadow-sm border border-[#F2E5B3]">
               FLOOR CONTROL
@@ -44,7 +44,7 @@ const FloorMonitoringSection = () => {
           </div>
 
           {/* Right Side: Mock Floor Map Image */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end" data-aos="fade-left">
+          <div className="w-full lg:w-[48%] flex justify-center lg:justify-end" data-aos="fade-left">
             <div className="w-full max-w-lg bg-white dark:bg-gray-800 rounded-[16px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] p-6 md:p-8">
               {/* CSS Grid for the Map - Matching image: T1-T4 top, Main + T5-T6 bottom */}
               <div className="grid grid-cols-4 grid-rows-2 gap-4 h-64 md:h-80">

@@ -1,19 +1,4 @@
-// import Navbar from "./components/common/Navbar";
-// import Footer from './components/common/Footer';
-// import "./styles/globals.css";
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html lang="en">
-//       <body className="bg-gray-100 text-gray-900">
-//         <Navbar />
-//         {children}
-//         <Footer/>
-//       </body>
-//     </html>
-//   );
-// }
-"use client"; // Ensures this runs on the client side
+"use client";
 
 import { useEffect, useState } from "react";
 import Navbar from "./components/common/Navbar";
@@ -36,11 +21,18 @@ export default function RootLayout({ children }) {
     localStorage.setItem("theme", newTheme);
   };
 
-  if (!theme) return null; // Prevent flickering before theme is applied
+  if (!theme) return null;
 
   return (
     <html lang="en">
-      <body className={`${theme === "dark" ? "dark:bg-black dark:text-white" : "bg-gray-100 text-gray-900"}`}>
+      <body
+        className={`
+          ${theme === "dark" ? "dark" : ""}
+          bg-gray-100 dark:bg-black
+          text-gray-900 dark:text-white
+          overflow-x-hidden
+        `}
+      >
         <Navbar toggleTheme={toggleTheme} theme={theme} />
         {children}
         <Footer />
