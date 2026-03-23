@@ -47,7 +47,7 @@ const SuccessStoriesSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F9FB] dark:bg-black overflow-hidden">
+    <section id="testimonials" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F9FB] dark:bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
@@ -59,12 +59,12 @@ const SuccessStoriesSection = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+        {/* Testimonials Grid / Mobile Slider */}
+        <div className="flex overflow-x-auto md:grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-stretch snap-x snap-mandatory pb-8 md:pb-0 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {testimonials.map((item) => (
             <div 
               key={item.id}
-              className="group flex flex-col bg-white dark:bg-[#111827] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-black/5 dark:border-white/10"
+              className="group flex-none w-[85vw] sm:w-[380px] md:w-auto snap-center flex flex-col bg-white dark:bg-[#111827] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-black/5 dark:border-white/10"
               data-aos="fade-up"
               data-aos-delay={item.id * 100}
             >

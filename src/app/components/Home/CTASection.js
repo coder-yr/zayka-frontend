@@ -3,7 +3,7 @@ import React from "react";
 
 const CTASection = () => {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F9FB] dark:bg-black">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F9FB] dark:bg-black">
       <div className="max-w-7xl mx-auto">
         <div
           className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#FDF2F8] via-[#FFF1F2] to-[#FDF2F8] dark:from-[#111827] dark:via-[#111827] dark:to-[#111827] p-8 sm:p-12 lg:p-20 text-center shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white/40 dark:border-gray-800"

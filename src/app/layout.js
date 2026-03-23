@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Navbar from "./components/common/Navbar";
+import StickySubmenu from "./components/Home/StickySubmenu";
 import Footer from "./components/common/Footer";
+import { FeatureProvider } from "@/context/FeatureContext";
 import "./styles/globals.css";
 
 export default function RootLayout({ children }) {
@@ -33,9 +35,12 @@ export default function RootLayout({ children }) {
           overflow-x-hidden
         `}
       >
-        <Navbar toggleTheme={toggleTheme} theme={theme} />
-        {children}
-        <Footer />
+        <FeatureProvider>
+          <Navbar toggleTheme={toggleTheme} theme={theme} />
+          <StickySubmenu />
+          {children}
+          <Footer />
+        </FeatureProvider>
       </body>
     </html>
   );

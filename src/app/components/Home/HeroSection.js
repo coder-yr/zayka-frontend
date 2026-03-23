@@ -5,7 +5,7 @@ import { PlayCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="bg-white dark:bg-black dark:text-white pt-24 pb-16 md:pb-20 overflow-hidden flex items-center min-h-[90vh]">
+    <section id="overview" className="bg-white dark:bg-black dark:text-white pt-24 pb-16 md:pb-20 overflow-hidden flex items-center min-h-[90vh]">
       <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-24 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8">
         
         {/* Left Content */}
