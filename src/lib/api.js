@@ -75,3 +75,13 @@ export const featureService = {
     return response.data;
   },
 };
+
+// ==========================================
+// Pricing Page API Services
+// ==========================================
+export const pricingService = {
+  getPricingContent: async () => {
+    const response = await api.get('/pricing');
+    return response.data;
+  },
+};
