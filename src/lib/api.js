@@ -84,4 +84,53 @@ export const pricingService = {
     const response = await api.get('/pricing');
     return response.data;
   },
+  getGeoData: async () => {
+    const params = {};
+    if (typeof window !== 'undefined') {
+      const searchParams = new URLSearchParams(window.location.search);
+      const country = searchParams.get('country');
+      const currency = searchParams.get('currency');
+      if (country) params.country = country;
+      if (currency) params.currency = currency;
+    }
+
+    // Primary source: backend geo endpoint (supports edge headers in production).
+    try {
+      const response = await api.get('/geo', { params });
+      return response.data?.data || response.data || null;
+    } catch (error) {
+      // Ignore and continue to fallback providers.
+    }
+
+    try {
+      const response = await axios.get('https://ipapi.co/json/');
+      return response.data || null;
+    } catch (error) {
+      // Ignore and continue to fallback providers.
+    }
+
+    try {
+      const response = await axios.get('https://ipwho.is/');
+      if (response.data && response.data.success !== false) {
+        return {
+          country_code: response.data.country_code,
+          country_name: response.data.country,
+          currency: response.data.currency_code,
+        };
+      }
+      return null;
+    } catch (error) {
+      return null;
+    }
+  },
+};
+
+// ==========================================
+// Home Page Content API Services
+// ==========================================
+export const homeContentService = {
+  getHomeContent: async () => {
+    const response = await api.get('/home-content');
+    return response.data;
+  },
 };

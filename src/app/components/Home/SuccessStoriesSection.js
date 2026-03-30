@@ -10,7 +10,7 @@ const SuccessStoriesSection = () => {
       id: 1,
       type: "image",
       media: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      quote: "Zaika POS doubled our checkout speed in just one month. A total game changer for our business.",
+      quote: "Zayaka POS doubled our checkout speed in just one month. A total game changer for our business.",
       author: "Sarah Jenkins",
       role: "CEO of Urban Bites",
       rating: 5,
@@ -20,7 +20,7 @@ const SuccessStoriesSection = () => {
       type: "video",
       media: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
-      quote: "Inventory tracking is finally automated and stress-free. Highly recommend Zaika POS for modern retail.",
+      quote: "Inventory tracking is finally automated and stress-free. Highly recommend Zayaka POS for modern retail.",
       author: "Marcus Vong",
       role: "Founder of Mode Retail",
       rating: 5,
@@ -39,7 +39,7 @@ const SuccessStoriesSection = () => {
       type: "video",
       media: "https://images.unsplash.com/photo-1587502537745-84b86da1204f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder video
-      quote: "Zayka POS analytics helped us identify our most profitable dishes within weeks.",
+      quote: "Zayaka POS analytics helped us identify our most profitable dishes within weeks.",
       author: "David Chen",
       role: "Manager of Golden Dragon",
       rating: 5,
@@ -55,7 +55,7 @@ const SuccessStoriesSection = () => {
             Customer Success Stories
           </h2>
           <p className="text-[#6B7280] dark:text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto font-medium">
-            See how businesses around the globe are transforming <br className="hidden sm:block" /> their operations with Zaika POS.
+            See how businesses around the globe are transforming <br className="hidden sm:block" /> their operations with Zayaka POS.
           </p>
         </div>
 

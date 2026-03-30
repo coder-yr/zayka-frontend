@@ -20,7 +20,7 @@ const CTASection = () => {
             </h2>
 
             <p className="text-gray-600 dark:text-gray-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10 font-medium">
-              Join over 10,000+ businesses using Zaika POS to automate <br className="hidden md:block" /> their workflow and increase customer satisfaction.
+              Join over 10,000+ businesses using Zayaka POS to automate <br className="hidden md:block" /> their workflow and increase customer satisfaction.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">

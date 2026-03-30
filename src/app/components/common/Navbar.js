@@ -16,7 +16,7 @@ const Navbar = ({ toggleTheme, theme }) => {
         {/* Logo */}
         <div className="font-bold text-2xl">
           <Link href="/">
-            Zayka<span className="italic underline">pos</span>
+            Zayaka<span className="italic underline">pos</span>
           </Link>
         </div>
 

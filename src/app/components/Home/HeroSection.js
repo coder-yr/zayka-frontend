@@ -23,7 +23,7 @@ const HeroSection = () => {
 
           {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-lg mb-8 sm:mb-12 leading-relaxed">
-            Stop juggling multiple tools. Zaika POS unifies your inventory, sales, and staff management into one beautiful, lightning-fast interface.
+            Stop juggling multiple tools. Zayaka POS unifies your inventory, sales, and staff management into one beautiful, lightning-fast interface.
           </p>
 
           {/* CTAs */}
@@ -53,7 +53,7 @@ const HeroSection = () => {
                   </div>
                   <div className="flex-1 text-center pr-5 sm:pr-6">
                     <span className="text-[9px] sm:text-[11px] font-semibold text-gray-400 tracking-widest uppercase">
-                      ZAIKA CLOUD SAB POS APP
+                      ZAYAKA CLOUD SAB POS APP
                     </span>
                   </div>
                </div>
@@ -70,7 +70,7 @@ const HeroSection = () => {
                           <div className="w-3.5 sm:w-4 h-[2px] bg-white rounded-full"></div>
                           <div className="w-3.5 sm:w-4 h-[2px] bg-white rounded-full"></div>
                         </div>
-                        <div className="font-semibold text-xs sm:text-sm tracking-wide">Zaika</div>
+                        <div className="font-semibold text-xs sm:text-sm tracking-wide">Zayaka</div>
                         <div className="w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-gray-500 border border-gray-400 overflow-hidden flex items-end justify-center">
                            <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-gray-300 mb-0.5"></div>
                         </div>

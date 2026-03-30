@@ -236,12 +236,13 @@ export default function PricingPage() {
   }, []);
 
   useEffect(() => {
-    fetch("https://ipapi.co/json/")
-      .then((res) => res.json())
-      .then((data) => {
-        const supportedCurrencies = new Set(pricingContent.currencies.map((item) => item.code));
+    const fetchGeoData = async () => {
+      const supportedCurrencies = new Set(pricingContent.currencies.map((item) => item.code));
+
+      try {
+        const data = await pricingService.getGeoData();
         const autoCurrency = resolveAutoCurrency({
-          geoData: data,
+          geoData: data || {},
           supportedCurrencies,
           countryCurrencyMap: pricingContent.countryCurrencyMap || {},
           defaultCurrency: pricingContent.defaultCurrency || "INR",
@@ -249,12 +250,10 @@ export default function PricingPage() {
 
         setCurrency(autoCurrency);
 
-        if (data.country_name) {
+        if (data?.country_name) {
           setCountryName(data.country_name);
         }
-      })
-      .catch(() => {
-        const supportedCurrencies = new Set(pricingContent.currencies.map((item) => item.code));
+      } catch (error) {
         const fallbackCurrency = resolveAutoCurrency({
           geoData: {},
           supportedCurrencies,
@@ -263,7 +262,10 @@ export default function PricingPage() {
         });
 
         setCurrency(fallbackCurrency);
-      });
+      }
+    };
+
+    fetchGeoData();
   }, [pricingContent.currencies, pricingContent.countryCurrencyMap, pricingContent.defaultCurrency]);
 
   const plans = useMemo(() => {

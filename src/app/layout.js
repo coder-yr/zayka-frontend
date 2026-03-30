@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Navbar from "./components/common/Navbar";
 import StickySubmenu from "./components/Home/StickySubmenu";
 import Footer from "./components/common/Footer";
@@ -9,6 +10,8 @@ import "./styles/globals.css";
 
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState("light");
+  const pathname = usePathname();
+  const isHomePage = pathname === "/home";
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
@@ -36,10 +39,10 @@ export default function RootLayout({ children }) {
         `}
       >
         <FeatureProvider>
-          <Navbar toggleTheme={toggleTheme} theme={theme} />
-          <StickySubmenu />
+          {!isHomePage && <Navbar toggleTheme={toggleTheme} theme={theme} />}
+          {!isHomePage && <StickySubmenu />}
           {children}
-          <Footer />
+          {!isHomePage && <Footer />}
         </FeatureProvider>
       </body>
     </html>
