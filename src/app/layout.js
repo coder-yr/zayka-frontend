@@ -6,12 +6,15 @@ import Navbar from "./components/common/Navbar";
 import StickySubmenu from "./components/Home/StickySubmenu";
 import Footer from "./components/common/Footer";
 import { FeatureProvider } from "@/context/FeatureContext";
+import { CartProvider } from "@/context/CartContext";
 import "./styles/globals.css";
 
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState("light");
   const pathname = usePathname();
   const isHomePage = pathname === "/home";
+  const isKioskPage = pathname === "/kiosk";
+  const showLayoutWrappers = !isHomePage && !isKioskPage;
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
@@ -39,10 +42,12 @@ export default function RootLayout({ children }) {
         `}
       >
         <FeatureProvider>
-          {!isHomePage && <Navbar toggleTheme={toggleTheme} theme={theme} />}
-          {!isHomePage && <StickySubmenu />}
-          {children}
-          {!isHomePage && <Footer />}
+          <CartProvider>
+            {showLayoutWrappers && <Navbar toggleTheme={toggleTheme} theme={theme} />}
+            {showLayoutWrappers && <StickySubmenu />}
+            {children}
+            {showLayoutWrappers && <Footer />}
+          </CartProvider>
         </FeatureProvider>
       </body>
     </html>

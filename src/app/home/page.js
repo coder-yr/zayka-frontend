@@ -2,8 +2,9 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Search, ShoppingCart, ChevronRight, Plus, Apple, Play } from "lucide-react";
+import { Search, ShoppingCart, ChevronRight, Plus, Apple, Play, Check } from "lucide-react";
 import { homeContentService } from "@/lib/api";
+import { useCart } from "@/context/CartContext";
 // We use Play as a stand-in for Google Play icon if we don't have it, but standard layout used specific SVG/icon.
 // We'll use simple SVGs for App Store and Google Play for accuracy.
 
@@ -87,6 +88,9 @@ const normalizeHomeContent = (data) => {
 // ---- COMPONENTS ---- //
 
 function Navbar() {
+  const { cartItems } = useCart();
+  const cartTotalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <nav className="w-full bg-[#FCFBF9] sticky top-0 z-50 py-4 px-6 md:px-12">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -123,12 +127,14 @@ function Navbar() {
             <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
           </div>
           
-          <div className="relative cursor-pointer">
-            <ShoppingCart className="text-gray-700 w-6 h-6" />
-            <span className="absolute -top-1.5 -right-1.5 bg-[#C82333] text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center border-2 border-[#FCFBF9]">
-              2
-            </span>
-          </div>
+          <Link href="/cart" className="relative cursor-pointer">
+            <ShoppingCart className="text-gray-700 w-6 h-6 hover:text-gray-900 transition-colors" />
+            {cartTotalItems > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 bg-[#C82333] text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center border-2 border-[#FCFBF9]">
+                {cartTotalItems}
+              </span>
+            )}
+          </Link>
 
           <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-transparent hover:border-gray-200 cursor-pointer">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -267,6 +273,44 @@ export default function StandaloneHomePage() {
   const trendingMain = homeContent.trendingBanners?.main || DEFAULT_HOME_CONTENT.trendingBanners.main;
   const trendingSide = homeContent.trendingBanners?.side || DEFAULT_HOME_CONTENT.trendingBanners.side;
 
+  const { addToCart } = useCart();
+
+  const handleAddTrendingMain = () => {
+    addToCart({
+      id: "trending-main",
+      title: trendingMain.title,
+      price: parseFloat(trendingMain.price),
+      image: resolveMediaUrl(trendingMain.imageUrl),
+      description: trendingMain.description,
+      badgeText: trendingMain.badgeLabel,
+      badgeColor: trendingMain.badgeColor === "red" ? "bg-red-100 text-red-700" : "bg-green-100 text-green-700"
+    });
+  };
+
+  const handleAddTrendingSide = () => {
+    addToCart({
+      id: "trending-side",
+      title: trendingSide.title,
+      price: parseFloat(trendingSide.price),
+      image: resolveMediaUrl(trendingSide.imageUrl),
+      description: trendingSide.description,
+      badgeText: trendingSide.badgeLabel,
+      badgeColor: trendingSide.badgeColor === "red" ? "bg-red-100 text-red-700" : "bg-green-100 text-green-700"
+    });
+  };
+
+  const handleAddSignature = (item, idx) => {
+    addToCart({
+      id: `signature-${idx}`,
+      title: item.title,
+      price: parseFloat(item.price),
+      image: resolveMediaUrl(item.img),
+      description: item.desc,
+      badgeText: "",
+      badgeColor: ""
+    });
+  };
+
   return (
     <div className="min-h-screen bg-[#F6F5F2] font-sans selection:bg-[#C82333] selection:text-white">
       <Navbar />
@@ -369,7 +413,7 @@ export default function StandaloneHomePage() {
                 
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-gray-900">${trendingMain.price}</span>
-                  <button className="bg-[#C82333] text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center hover:bg-red-700 transition-colors shadow-sm">
+                  <button onClick={handleAddTrendingMain} className="bg-[#C82333] text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center hover:bg-red-700 transition-colors shadow-sm active:scale-95">
                     <Plus className="w-4 h-4 mr-1.5" /> {trendingMain.ctaText}
                   </button>
                 </div>
@@ -397,7 +441,7 @@ export default function StandaloneHomePage() {
                 
                 <div className="flex items-center justify-between mt-auto">
                   <span className="text-xl font-bold text-gray-900">${trendingSide.price}</span>
-                  <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors text-gray-600">
+                  <button onClick={handleAddTrendingSide} className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors text-gray-600 active:scale-95">
                     <Plus className="w-5 h-5" />
                   </button>
                 </div>
@@ -429,17 +473,23 @@ export default function StandaloneHomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {signatureMenu.map((item, idx) => (
-              <div key={idx} className="group cursor-pointer">
+              <div key={idx} className="group cursor-pointer" onClick={() => handleAddSignature(item, idx)}>
                 <div className="relative w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden mb-4 shadow-sm border border-gray-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={resolveMediaUrl(item.img)} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={resolveMediaUrl(item.img)} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   {/* Price Tag */}
                   <div className="absolute top-3 right-3 bg-white px-2 py-1 rounded text-xs font-bold text-gray-900 shadow-sm">
                     ${item.price}
                   </div>
+                  {/* Hover Add Overlay */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                      <Plus className="w-4 h-4" /> Add
+                    </div>
+                  </div>
                 </div>
                 <h4 className="font-bold text-gray-900 text-[15px] mb-1 leading-tight group-hover:text-[#C82333] transition-colors">{item.title}</h4>
-                <p className="text-[13px] text-gray-500 leading-snug">{item.desc}</p>
+                <p className="text-[13px] text-gray-500 leading-snug line-clamp-2">{item.desc}</p>
               </div>
             ))}
           </div>
