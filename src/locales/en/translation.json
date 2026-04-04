@@ -1,0 +1,488 @@
+{
+  "welcome": "Welcome",
+  "order_now": "Order Now",
+  "cart": "Cart",
+  "checkout": "Checkout",
+  "total": "Total",
+  "confirm_order": "Confirm Order",
+  "language": "Language",
+  "english": "EN",
+  "arabic": "AR",
+  "touch_to_start": "Touch to Start",
+  "fresh_fast_delicious": "Fresh. Fast. Delicious.",
+  "cancel_order": "Cancel Order",
+  "your_order": "Your Order",
+  "items_count": "{{count}} items",
+  "your_cart_empty": "Your cart is empty",
+  "select_items_prompt": "Please select items from the menu to build your order.",
+  "subtotal": "Subtotal",
+  "tax": "Tax (5%)",
+  "pay_now": "Pay Now",
+  "where_eating": "Where are you eating?",
+  "payment_method_question": "How would you like to pay?",
+  "dine_in": "Dine-in",
+  "takeaway": "Takeaway",
+  "payment_success": "Payment Successful!",
+  "order_sent_kitchen": "Your order has been sent to the kitchen.",
+  "order_number": "Order Number",
+  "estimated_prep_time": "Estimated preparation time:",
+  "mins_10_15": "10-15 mins",
+  "done": "Done",
+  "reset_soon": "App will reset automatically in 30 seconds...",
+  "menu": "Menu",
+  "reservations": "Reservations",
+  "our_story": "Our Story",
+  "find_dish": "Find a dish...",
+  "your_cart_items": "Your Cart ({{count}} Items)",
+  "browse_menu": "Browse Menu",
+  "order_summary": "Order Summary",
+  "delivery": "Delivery",
+  "coupon_code": "Coupon Code",
+  "apply": "Apply",
+  "proceed_to_checkout": "Proceed to Checkout",
+  "delivery_to": "Delivery To",
+  "change_address": "CHANGE ADDRESS",
+  "privacy_policy": "Privacy Policy",
+  "terms_service": "Terms of Service",
+  "accessibility": "Accessibility",
+  "contact_us": "Contact Us",
+  "fast_delivery": "Fast Delivery",
+  "eta_25_35": "Estimated arrival in 25-35 mins",
+  "complimentary_side": "Complimentary Side?",
+  "add_signature_side": "Add our signature Garlic Knots for just $4.99",
+  "add_to_order": "Add to Order",
+  "recommended": "Recommended",
+  "burgers": "Burgers",
+  "pizza": "Pizza",
+  "beverages": "Beverages",
+  "desserts": "Desserts",
+  "book_demo": "Book A Demo",
+  "features": "Features",
+  "pricing": "Pricing",
+  "our_products": "Our Products",
+  "outlet_types": "Outlet Types",
+  "become_partner": "Become a Partner",
+  "nav": {
+    "posSystem": "POS System",
+    "inventory": "Inventory",
+    "analytics": "Analytics",
+    "upi_qr": "UPI QR Payments"
+  },
+  "home": {
+    "hero": {
+      "badge": "NEW VERSION 2.0 LIVE",
+      "headingLine1": "The Operating",
+      "headingLine2": "System",
+      "headingPrefix": "for",
+      "headingHighlight": "Modern Retail.",
+      "description": "Stop juggling multiple tools. Zayaka POS unifies your inventory, sales, and staff management into one beautiful, lightning-fast interface.",
+      "watchDemo": "Watch Interactive Demo",
+      "talkToSales": "Talk to Sales",
+      "browserTitle": "ZAYAKA CLOUD SAB POS APP",
+      "dashboardActions": "Dashboard Actions",
+      "actionStartOrder": "Start a new order",
+      "actionViewOrders": "View current orders",
+      "actionInventory": "Inventory Management",
+      "actionCloseRegister": "Close register"
+    },
+    "features": {
+      "headingPrefix": "Everything you need to",
+      "headingHighlight": "Succeed",
+      "description": "A complete suite of tools designed specifically for food businesses and retail stores.",
+      "cards": {
+        "quickBilling": {
+          "title": "Quick Billing",
+          "description": "Lightning-fast billing interface with shortcut keys, barcode scanning, and multi-payment support."
+        },
+        "spiceInventory": {
+          "title": "Spice Inventory",
+          "description": "Manage raw ingredients precisely with recipe-based inventory mapping and low-stock alerts."
+        },
+        "salesAnalytics": {
+          "title": "Sales Analytics",
+          "description": "Real-time insights into your top-selling items, peak hours, and overall business growth."
+        },
+        "kds": {
+          "title": "Kitchen Display (KDS)",
+          "description": "Send orders directly to the kitchen in real-time to reduce errors and improve prep times."
+        },
+        "customerLoyalty": {
+          "title": "Customer Loyalty",
+          "description": "Run points programs, fixed discounts, and custom marketing campaigns effortlessly."
+        },
+        "staffManagement": {
+          "title": "Staff Management",
+          "description": "Track attendance, manage shifts, and set specific role-based access permissions."
+        },
+        "multiStore": {
+          "title": "Multi-Store Management",
+          "description": "Control all your outlets from a single dashboard, with centralized reporting and pricing."
+        },
+        "offlineMode": {
+          "title": "Offline Mode",
+          "description": "Continue billing seamlessly even when the internet drops. Auto-syncs when online."
+        }
+      }
+    },
+    "growth": {
+      "imageAltDineIn": "Dine-in Excellence",
+      "imageAltChef": "Chef Preparing Food",
+      "heading": "Modules Built for Growth",
+      "moduleDineIn": {
+        "title": "Dine-in Excellence",
+        "description": "Interactive table management with visual maps. Handle split bills and table transfers with a single tap."
+      },
+      "moduleDelivery": {
+        "title": "Seamless Delivery",
+        "description": "Direct integration with Swiggy, Zomato, and Dunzo. Manage all online orders from a single screen."
+      },
+      "moduleAnalytics": {
+        "title": "Insightful Analytics",
+        "description": "Daily reports on best-selling dishes, peak hours, and server performance sent directly to your phone."
+      },
+      "floorControlBadge": "FLOOR CONTROL",
+      "floorControlHeading": "Interactive Floor Map",
+      "floorControlDescription": "Monitor your floor in real-time with color-coded status updates. Know exactly which tables are free, occupied, or awaiting the bill at a glance.",
+      "statusAvailable": "Available",
+      "statusOccupied": "Occupied",
+      "statusDirty": "Dirty / Delay",
+      "mainDiningArea": "MAIN DINING AREA"
+    }
+  },
+  "components": {
+    "cta": {
+      "headingLine1": "Ready to transform your",
+      "headingLine2": "business operations?",
+      "descriptionLine1": "Join over 10,000+ businesses using Zayaka POS to automate",
+      "descriptionLine2": "their workflow and increase customer satisfaction.",
+      "startTrial": "Start a free trial",
+      "contactSales": "Contact Sales"
+    },
+    "footer": {
+      "description": "The premium operating system for modern commerce. Built for precision, designed for scale.",
+      "website": "Website",
+      "community": "Community",
+      "share": "Share",
+      "product": "Product",
+      "integrations": "Integrations",
+      "apiDocs": "API Documentation",
+      "company": "Company",
+      "aboutUs": "About Us",
+      "careers": "Careers",
+      "pressKit": "Press Kit",
+      "contactSales": "Contact Sales",
+      "support": "Support",
+      "documentation": "Documentation",
+      "helpCenter": "Help Center",
+      "statusPage": "Status Page",
+      "copyright": "© 2024 Ethereal Workhorse. All rights reserved.",
+      "security": "Security"
+    },
+    "cardIcon": {
+      "servicesHeading": "Our Services",
+      "viewMore": "View More",
+      "hideCards": "Hide Cards",
+      "cards": [
+        { "title": "Billing", "description": "Create customized GST bills in 10+ formats and share bills with customers on WhatsApp." },
+        { "title": "Inventory", "description": "Track complete inventory with serial, batch, expiry, and item-wise reports." },
+        { "title": "Accounting", "description": "Record, manage, and track your business activities digitally with accounting reports." },
+        { "title": "GST Reports", "description": "Generate GSTR1, GSTR2, GSTR3B, GSTR9, and detailed GST reports with easy exports." },
+        { "title": "Payroll", "description": "Manage payroll and salary distribution seamlessly." },
+        { "title": "Expenses", "description": "Track business expenses to improve profitability." },
+        { "title": "Invoicing", "description": "Generate invoices and share them digitally." },
+        { "title": "Reports", "description": "Generate custom reports to analyze business trends." },
+        { "title": "Payroll", "description": "Manage payroll and salary distribution seamlessly." },
+        { "title": "Expenses", "description": "Track business expenses to improve profitability." },
+        { "title": "Invoicing", "description": "Generate invoices and share them digitally." },
+        { "title": "Reports", "description": "Generate custom reports to analyze business trends." }
+      ]
+    }
+  },
+  "pages": {
+    "reservations": {
+      "backToHome": "Back to Home",
+      "badge": "Reservations",
+      "heading": "Book Your Table at Zayaka",
+      "description": "Choose your preferred slot for lunch or dinner. Call us for large-group bookings and special occasions.",
+      "statusAvailable": "Available",
+      "statusLimited": "Limited",
+      "reserveButton": "Reserve a Table",
+      "callButton": "Call Restaurant"
+    },
+    "ourStory": {
+      "backToHome": "Back to Home",
+      "badge": "Our Story",
+      "heading": "The Journey of Zayaka",
+      "description": "Zayaka was created to blend authentic taste with modern dining comfort. From ingredient sourcing to final plating, every detail is designed to deliver a memorable food experience.",
+      "today": "Today",
+      "milestone2018": "Started as a small chef-driven kitchen with a focus on handcrafted flavors.",
+      "milestone2020": "Expanded into full-service dining and curated tasting experiences.",
+      "milestone2023": "Launched digital ordering and built a loyal customer community.",
+      "milestoneToday": "Serving modern Indian-global cuisine with freshness and consistency."
+    },
+    "contact": {
+      "successAlert": "Message sent successfully!",
+      "errorPrefix": "Error",
+      "genericError": "Something went wrong",
+      "failedAlert": "Failed to send the message. Please try again.",
+      "getInTouch": "Get in Touch",
+      "headingLine1": "Are you ready to talk to",
+      "headingLine2": "us?",
+      "emailLabel": "Email",
+      "sendUsMessage": "Send us a message",
+      "placeholderName": "Enter your name",
+      "placeholderPhone": "Enter your phone number",
+      "placeholderBusiness": "Describe your business",
+      "sendMessage": "Send Message"
+    },
+    "featureDetail": {
+      "notFoundTitle": "Feature not found",
+      "notFoundDescription": "The feature you are looking for does not exist or is currently inactive.",
+      "featuredBadge": "Featured Solution",
+      "bookDemo": "Book a Demo",
+      "contactSales": "Contact Sales",
+      "overview": "Overview",
+      "features": {
+        "multi-store": {
+          "title": "Multi-Store Management",
+          "shortDescription": "Control all your outlets from a single dashboard.",
+          "description": "Control all your outlets from a single dashboard, with centralized reporting and pricing."
+        }
+      }
+    },
+    "pricing": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "mostPopular": "Most Popular",
+      "perMonth": "/mo",
+      "compareEveryFeature": "Compare every feature",
+      "feature": "Feature",
+      "basic": "Basic",
+      "pro": "Pro",
+      "enterprise": "Enterprise",
+      "headerBadgeText": "PRICING PLANS",
+      "headingPrefix": "Simple, transparent",
+      "headingHighlight": "pricing for {{country}}.",
+      "subtitle": "Choose the perfect plan for your retail business. From rapid startups to global enterprise operations.",
+      "yearlySavingsText": "Save 20%",
+      "trustBadges": {
+        "No credit card required": "No credit card required",
+        "Cancel anytime": "Cancel anytime"
+      },
+      "plans": {
+        "Basic": {
+          "name": "Basic",
+          "description": "For single store startups.",
+          "buttonText": "Start for free",
+          "features": {
+            "Up to 1 store": "Up to 1 store",
+            "Standard support": "Standard support",
+            "2GB Storage": "2GB Storage"
+          }
+        },
+        "Pro": {
+          "name": "Pro",
+          "description": "For professional teams scaling up.",
+          "buttonText": "Upgrade to Pro",
+          "features": {
+            "Unlimited products": "Unlimited products",
+            "Priority support": "Priority support",
+            "50GB Storage": "50GB Storage",
+            "Custom branding": "Custom branding"
+          }
+        },
+        "Enterprise": {
+          "name": "Enterprise",
+          "description": "For large scale organizations.",
+          "buttonText": "Contact sales",
+          "features": {
+            "Dedicated Account Manager": "Dedicated Account Manager",
+            "SSO and SAML Login": "SSO and SAML Login",
+            "Unlimited Storage": "Unlimited Storage",
+            "Custom API limits": "Custom API limits"
+          }
+        },
+        "custom": {
+          "name": "Custom",
+          "description": "all custom",
+          "buttonText": "upgrade to custom",
+          "features": {
+            "custom products": "custom products",
+            "pay as you go": "pay as you go",
+            "support 24/7": "support 24/7"
+          }
+        }
+      },
+      "comparison": {
+        "categories": {
+          "WORKSPACE & USAGE": "WORKSPACE & USAGE",
+          "CORE CAPABILITIES": "CORE CAPABILITIES",
+          "SUPPORT & SECURITY": "SUPPORT & SECURITY"
+        },
+        "items": {
+          "Monthly active users": "Monthly active users",
+          "Total Stores": "Total Stores",
+          "Staff per store": "Staff per store",
+          "Custom Branding": "Custom Branding",
+          "Advanced Analytics": "Advanced Analytics",
+          "API Access": "API Access",
+          "SLA Guarantee": "SLA Guarantee",
+          "Security Audits": "Security Audits",
+          "Support": "Support",
+          "Monthly active users_value": "{{value}}",
+          "Total Stores_value": "{{value}}",
+          "Staff per store_value": "{{value}}",
+          "API Access_value": "{{value}}",
+          "Support_value": "{{value}}"
+        }
+      }
+    },
+    "partner": {
+      "successAlert": "Message sent successfully!",
+      "errorPrefix": "Error",
+      "genericError": "Something went wrong",
+      "failedAlert": "Failed to send the message. Please try again.",
+      "heroHeadingLine1": "Join 27,000+ Zaykapos",
+      "heroHeadingLine2": "Partners Worldwide",
+      "point1": "Join Vyapar, the fastest growing Billing & Accounting software for small businesses",
+      "point2": "Zero investment and no infrastructure required",
+      "point3": "Payment settlements every week",
+      "sendUsMessage": "Send us a message",
+      "placeholderPincode": "Enter your PIN code",
+      "faqHeading": "Frequently Asked Questions",
+      "services": [
+        {
+          "title": "Mobile App Development",
+          "description": "Mobile app development is a process for building mobile applications that run on mobile devices."
+        },
+        {
+          "title": "Website Development",
+          "description": "Web development refers to building, creating, and maintaining websites."
+        },
+        {
+          "title": "E-commerce Solutions",
+          "description": "We create e-commerce platforms best suited for your business model."
+        }
+      ],
+      "faqs": [
+        { "question": "Can I get more credits?", "answer": "Yes, you can purchase additional credits anytime." },
+        { "question": "Can I change my plan later?", "answer": "Absolutely! You can upgrade or downgrade your plan anytime." },
+        { "question": "What if I decide to cancel?", "answer": "You can cancel your subscription without any extra charges." },
+        { "question": "Will my unused credits roll over to the next month?", "answer": "No, unused credits do not roll over." },
+        { "question": "Is the payment service secure?", "answer": "Yes, we use secure and encrypted payment services." }
+      ]
+    },
+    "outlet": {
+      "loading": "Loading...",
+      "typewriter1": "Discover the best!",
+      "typewriter2": "Tailored for your needs!",
+      "typewriter3": "Elevate your experience!",
+      "heroDescription": "Experience the best {{name}} services tailored to your needs.",
+      "exploreButton": "Explore {{name}}",
+      "setupHeading": "How to Setup Billing Business on Zaykapos App",
+      "servicesHeadingPrefix": "Which",
+      "servicesHeadingHighlight": "Services",
+      "servicesHeadingSuffix": "We Provide",
+      "servicesDescription": "Sm digital develops and maintains Websites, Mobile Applications (Android and iOS), Desktop Software, Games, and E-commerce stores.",
+      "bestDealsPrefix": "Best",
+      "bestDealsHighlight": "Deals",
+      "bestDealsSuffix": "For You",
+      "addToCart": "Add to Cart",
+      "faqHeading": "Frequently Asked Questions",
+      "downloadApp": "Download App",
+      "services": [
+        { "title": "Mobile App Development", "description": "World-class Android and IOS app development." },
+        { "title": "Software Development", "description": "Desktop software for billing or other business purposes." },
+        { "title": "Digital Marketing", "description": "Advertising your business on platforms like Facebook, Instagram, Google, etc." },
+        { "title": "Website Development", "description": "Designing websites for business, personal, or professional use." },
+        { "title": "Ecommerce Stores", "description": "We design e-commerce platforms best suited for your business model." },
+        { "title": "Games Development", "description": "Designing and developing games for mobile and desktop." }
+      ],
+      "faqs": [
+        { "question": "Can I get more credits?", "answer": "Yes, you can purchase additional credits anytime." },
+        { "question": "Can I change my plan later?", "answer": "Absolutely! You can upgrade or downgrade your plan anytime." },
+        { "question": "What if I decide to cancel?", "answer": "You can cancel your subscription without any extra charges." },
+        { "question": "Will my unused credits roll over to the next month?", "answer": "No, unused credits do not roll over." },
+        { "question": "Is the payment service secure?", "answer": "Yes, we use secure and encrypted payment services." }
+      ]
+    },
+    "homeStandalone": {
+      "footerDescription": "Redefining the digital dining experience through precision, passion, and unparalleled flavour delivery.",
+      "partnerWithUs": "Partner with Us",
+      "blog": "Blog",
+      "safety": "Safety",
+      "terms": "Terms",
+      "downloadOurApp": "Download Our App",
+      "downloadOn": "DOWNLOAD ON THE",
+      "appStore": "App Store",
+      "getItOn": "GET IT ON",
+      "googlePlay": "Google Play",
+      "copyright": "© 2024 Zayaka. All rights reserved.",
+      "inspiration": "Inspiration for your first order",
+      "topPicks": "Top Picks",
+      "trendingDelicacies": "Trending Delicacies",
+      "exploreAll": "Explore All",
+      "signatureMenu": "Explore Our Signature Menu",
+      "viewFullMenu": "View Full Menu"
+    }
+  },
+  "qr": {
+    "dashboard": {
+      "heading": "UPI QR Payments",
+      "subtitle": "Generate, manage and share UPI payment QR codes",
+      "quick_qr": "Quick QR",
+      "quick_qr_desc": "Enter amount and generate QR instantly",
+      "calculator": "Calculator QR",
+      "calculator_desc": "Use a keypad to compute and generate QR",
+      "your_upis": "Your UPIs",
+      "your_upis_desc": "View and manage saved UPI IDs",
+      "add_new": "Add New UPI",
+      "add_new_desc": "Register a new UPI ID for payments"
+    },
+    "quick": {
+      "heading": "Quick QR Generator",
+      "amount_label": "Enter Amount (₹)",
+      "amount_placeholder": "e.g. 500",
+      "select_upi": "Select UPI",
+      "no_upi": "No UPI IDs saved",
+      "add_upi_prompt": "Add a UPI ID to get started",
+      "preview_heading": "QR Preview",
+      "scan_hint": "Scan this QR code to pay",
+      "amount_display": "Amount",
+      "upi_display": "UPI ID",
+      "name_display": "Name",
+      "download": "Download QR",
+      "share": "Share QR",
+      "copied": "Link copied!",
+      "no_qr": "Enter amount and select UPI to generate QR"
+    },
+    "calculator": {
+      "heading": "Calculator QR",
+      "display_label": "Amount (₹)",
+      "preview_heading": "Live QR Preview",
+      "no_qr": "Enter an amount using the keypad"
+    },
+    "upis": {
+      "heading": "Manage UPI IDs",
+      "subtitle": "Add, remove or set default UPI for quick payments",
+      "add_btn": "Add UPI",
+      "empty_heading": "No UPI IDs Yet",
+      "empty_desc": "Add your first UPI ID to start generating QR codes",
+      "default_badge": "Default",
+      "set_default": "Set as Default",
+      "delete": "Delete",
+      "confirm_delete": "Delete this UPI ID?"
+    },
+    "modal": {
+      "title": "Add UPI ID",
+      "name_label": "Display Name",
+      "name_placeholder": "e.g. My Business Account",
+      "upi_label": "UPI ID",
+      "upi_placeholder": "e.g. yourname@upi",
+      "error_name": "Name is required",
+      "error_upi": "UPI ID must contain '@'",
+      "save": "Save UPI",
+      "cancel": "Cancel"
+    }
+  }
+}

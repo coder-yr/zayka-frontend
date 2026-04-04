@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Check, X } from "lucide-react";
 import { pricingService } from "@/lib/api";
+import { useTranslation } from "react-i18next";
 
 const DEFAULT_PRICING_CONTENT = {
   countryFallbackName: "India",
@@ -212,6 +213,7 @@ const resolveFxCurrencyCode = (currencyCode, fxRates) => {
 };
 
 export default function PricingPage() {
+  const { t } = useTranslation();
   const [isYearly, setIsYearly] = useState(true);
   const [currency, setCurrency] = useState("INR");
   const [countryName, setCountryName] = useState("India");
@@ -353,17 +355,17 @@ export default function PricingPage() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block px-4 py-1.5 bg-pink-100 dark:bg-[#E80F88]/10 text-[#E80F88] text-xs font-black tracking-widest uppercase rounded-full mb-6">
-            {pricingContent.headerBadgeText}
+            {t("pages.pricing.headerBadgeText", { defaultValue: pricingContent.headerBadgeText })}
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white leading-tight mb-6 tracking-tight">
-            {pricingContent.headingPrefix} <br />
-            <span className="text-[#E80F88]">{headingHighlight}</span>
+            {t("pages.pricing.headingPrefix", { defaultValue: pricingContent.headingPrefix })} <br />
+            <span className="text-[#E80F88]">{t("pages.pricing.headingHighlight", { defaultValue: headingHighlight, country: countryName })}</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto">{pricingContent.subtitle}</p>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto">{t("pages.pricing.subtitle", { defaultValue: pricingContent.subtitle })}</p>
 
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className={`text-sm font-semibold ${!isYearly ? "text-gray-900 dark:text-white" : "text-gray-500"}`}>
-              Monthly
+              {t("pages.pricing.monthly")}
             </span>
             <button
               onClick={() => setIsYearly(!isYearly)}
@@ -377,10 +379,10 @@ export default function PricingPage() {
             </button>
             <div className="flex items-center gap-2">
               <span className={`text-sm font-semibold ${isYearly ? "text-gray-900 dark:text-white" : "text-gray-500"}`}>
-                Yearly
+                {t("pages.pricing.yearly")}
               </span>
               <span className="text-[10px] font-bold bg-pink-100 text-[#E80F88] px-2 py-0.5 rounded-full uppercase tracking-wider">
-                {pricingContent.yearlySavingsText}
+                {t("pages.pricing.yearlySavingsText", { defaultValue: pricingContent.yearlySavingsText })}
               </span>
             </div>
           </div>
@@ -402,7 +404,7 @@ export default function PricingPage() {
           <div className="flex items-center justify-center gap-6 text-sm text-gray-500 dark:text-gray-400 font-medium">
             {pricingContent.trustBadges.map((badge) => (
               <div key={badge} className="flex items-center gap-2">
-                <Check size={14} className="text-[#E80F88]" /> {badge}
+                <Check size={14} className="text-[#E80F88]" /> {t(`pages.pricing.trustBadges.${badge}`, { defaultValue: badge })}
               </div>
             ))}
           </div>
@@ -426,13 +428,13 @@ export default function PricingPage() {
               >
                 {plan.popular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#E80F88] text-white px-4 py-1 text-xs font-bold uppercase tracking-wider rounded-full shadow-lg">
-                    Most Popular
+                    {t("pages.pricing.mostPopular")}
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{plan.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{t(`pages.pricing.plans.${plan.name.toLowerCase()}.name`, { defaultValue: plan.name })}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{t(`pages.pricing.plans.${plan.name.toLowerCase()}.description`, { defaultValue: plan.description })}</p>
                 </div>
 
                 <div className="mb-8">
@@ -440,7 +442,7 @@ export default function PricingPage() {
                     <span className="text-4xl md:text-5xl font-black tracking-tight">
                       {pricing.isCustom ? pricing.value : `${symbol}${pricing.value}`}
                     </span>
-                    {!pricing.isCustom && <span className="text-sm font-medium text-gray-500 ml-2">/mo</span>}
+                    {!pricing.isCustom && <span className="text-sm font-medium text-gray-500 ml-2">{t("pages.pricing.perMonth")}</span>}
                   </div>
                 </div>
 
@@ -448,7 +450,7 @@ export default function PricingPage() {
                   {(plan.features || []).map((feature) => (
                     <li key={feature} className="flex items-start text-sm font-medium text-gray-700 dark:text-gray-300">
                       <Check size={18} className="text-[#E80F88] mr-3 shrink-0" strokeWidth={3} />
-                      {feature}
+                      {t(`pages.pricing.plans.${plan.name.toLowerCase()}.features.${feature.toLowerCase()}`, { defaultValue: feature })}
                     </li>
                   ))}
                 </ul>
@@ -462,7 +464,7 @@ export default function PricingPage() {
                     }
                   `}
                 >
-                  {plan.buttonText}
+                  {t(`pages.pricing.plans.${plan.name.toLowerCase()}.buttonText`, { defaultValue: plan.buttonText })}
                 </button>
               </div>
             );
@@ -470,23 +472,23 @@ export default function PricingPage() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-black text-center text-gray-900 dark:text-white mb-12">Compare every feature</h2>
+          <h2 className="text-3xl font-black text-center text-gray-900 dark:text-white mb-12">{t("pages.pricing.compareEveryFeature")}</h2>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[600px]">
               <thead>
                 <tr>
                   <th className="w-1/3 py-4 pr-4 border-b border-gray-200 dark:border-gray-800 text-xs font-black tracking-wider text-gray-500 uppercase">
-                    Feature
+                    {t("pages.pricing.feature")}
                   </th>
                   <th className="w-1/5 py-4 px-4 border-b border-gray-200 dark:border-gray-800 text-xs font-black tracking-wider text-gray-500 text-center uppercase">
-                    Basic
+                    {t("pages.pricing.basic")}
                   </th>
                   <th className="w-1/5 py-4 px-4 border-b border-gray-200 dark:border-gray-800 text-xs font-black tracking-wider text-gray-900 dark:text-white text-center uppercase bg-gray-50 dark:bg-gray-800/50 rounded-t-xl">
-                    Pro
+                    {t("pages.pricing.pro")}
                   </th>
                   <th className="w-1/5 py-4 px-4 border-b border-gray-200 dark:border-gray-800 text-xs font-black tracking-wider text-gray-500 text-center uppercase">
-                    Enterprise
+                    {t("pages.pricing.enterprise")}
                   </th>
                 </tr>
               </thead>
@@ -495,7 +497,7 @@ export default function PricingPage() {
                   <React.Fragment key={section.category}>
                     <tr>
                       <td colSpan="4" className="py-6 pt-10 text-xs font-black tracking-widest text-[#E80F88] uppercase">
-                        {section.category}
+                        {t(`pages.pricing.comparison.categories.${section.category}`, { defaultValue: section.category })}
                       </td>
                     </tr>
                     {section.items.map((item) => (
@@ -503,7 +505,7 @@ export default function PricingPage() {
                         key={`${section.category}-${item.name}`}
                         className="group border-b border-gray-100 dark:border-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors"
                       >
-                        <td className="py-4 pr-4 text-sm font-medium text-gray-700 dark:text-gray-300">{item.name}</td>
+                        <td className="py-4 pr-4 text-sm font-medium text-gray-700 dark:text-gray-300">{t(`pages.pricing.comparison.items.${item.name}`, { defaultValue: item.name })}</td>
                         <td className="py-4 px-4 text-sm text-center text-gray-500">
                           {typeof item.basic === "boolean" ? (
                             item.basic ? (
@@ -512,7 +514,7 @@ export default function PricingPage() {
                               <X size={18} className="mx-auto text-gray-300 dark:text-gray-700" />
                             )
                           ) : (
-                            item.basic
+                            t(`pages.pricing.comparison.items.${item.name}_value`, { defaultValue: String(item.basic) })
                           )}
                         </td>
                         <td className="py-4 px-4 text-sm font-bold text-center text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-800/50 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 transition-colors">
@@ -523,7 +525,7 @@ export default function PricingPage() {
                               <X size={18} className="mx-auto text-gray-300 dark:text-gray-700" />
                             )
                           ) : (
-                            item.pro
+                            t(`pages.pricing.comparison.items.${item.name}_value`, { defaultValue: String(item.pro) })
                           )}
                         </td>
                         <td className="py-4 px-4 text-sm text-center text-gray-500">
@@ -534,7 +536,7 @@ export default function PricingPage() {
                               <X size={18} className="mx-auto text-gray-300 dark:text-gray-700" />
                             )
                           ) : (
-                            item.enterprise
+                            t(`pages.pricing.comparison.items.${item.name}_value`, { defaultValue: String(item.enterprise) })
                           )}
                         </td>
                       </tr>

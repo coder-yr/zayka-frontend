@@ -7,6 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaMobileAlt, FaLaptopCode, FaBullhorn, FaShoppingCart, FaGamepad, FaGlobe ,FaUtensils, FaStore, FaCoffee, FaIceCream, FaBirthdayCake, FaBeer, FaPizzaSlice} from "react-icons/fa";
 import Typewriter from "react-typewriter-effect";
+import { useTranslation } from "react-i18next";
 
 const categoriesData = {
     "fine-dine": {
@@ -136,6 +137,7 @@ const products = [
 
 const CategoryPage = () => {
   const { outlet } = useParams();
+  const { t } = useTranslation();
   const [outletData, setOutletData] = useState(null);
   const [activeIndex, setActiveIndex] = useState(null);
     const [showButton, setShowButton] = useState(false);
@@ -158,7 +160,7 @@ const CategoryPage = () => {
 }, []);
 
 
-  if (!outletData) return <p className="text-center mt-20 text-2xl">Loading...</p>;
+  if (!outletData) return <p className="text-center mt-20 text-2xl">{t("pages.outlet.loading")}</p>;
 
   return (
     <>
@@ -171,9 +173,9 @@ const CategoryPage = () => {
             <span className="text-[#E80F88]">
               <Typewriter
                 multiText={[
-                  "Discover the best!",
-                  "Tailored for your needs!",
-                  "Elevate your experience!"
+                  t("pages.outlet.typewriter1"),
+                  t("pages.outlet.typewriter2"),
+                  t("pages.outlet.typewriter3")
                 ]}
                 cursor
                 cursorColor="#E80F88"
@@ -185,10 +187,10 @@ const CategoryPage = () => {
             </span>
           </h1>
           <p className="text-base font-medium text-muted mt-3 capitalize">
-            Experience the best {outletData.name} services tailored to your needs.
+            {t("pages.outlet.heroDescription", { name: outletData.name })}
           </p>
           <button className="lg:mt-16 mt-4 w-2/3 px-0 py-2 bg-white text-black border border-[#E80F88] font-medium rounded-lg lg:text-lg hover:bg-black hover:text-white transition-colors duration-300">
-            Explore {outletData.name}
+            {t("pages.outlet.exploreButton", { name: outletData.name })}
           </button>
         </div>
 
@@ -208,7 +210,7 @@ const CategoryPage = () => {
     </section>
     <section className="flex flex-col items-center text-center py-12 px-4 lg:px-24 bg-screenBackground">
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6 font-['DM_Sans',sans-serif]">
-          How to Setup Billing Business on Zaykapos App
+          {t("pages.outlet.setupHeading")}
         </h2>
 
         {/* Video Wrapper */}
@@ -226,11 +228,10 @@ const CategoryPage = () => {
     <section className="px-6 lg:px-28 w-screen py-16  bg-screenBackground">
     <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-blackLight">
-            Which <span className="text-primary">Services</span> We Provide
+        {t("pages.outlet.servicesHeadingPrefix")} <span className="text-primary">{t("pages.outlet.servicesHeadingHighlight")}</span> {t("pages.outlet.servicesHeadingSuffix")}
         </h2>
         <p className="text-ashDark mt-2">
-            Sm digital develops and maintains Websites, Mobile Applications (Android and iOS),
-            Desktop Software, Games, and E-commerce stores.
+        {t("pages.outlet.servicesDescription")}
         </p>
     </div>
 
@@ -249,8 +250,8 @@ const CategoryPage = () => {
                     {service.icon}
                 </div>
                 <div>
-                    <h3 className="text-lg font-bold text-whiteOnly">{service.title}</h3>
-                    <p className="text-ashLight text-sm">{service.description}</p>
+                  <h3 className="text-lg font-bold text-whiteOnly">{t(`pages.outlet.services.${index}.title`, { defaultValue: service.title })}</h3>
+                  <p className="text-ashLight text-sm">{t(`pages.outlet.services.${index}.description`, { defaultValue: service.description })}</p>
                 </div>
             </div>
         ))}
@@ -258,7 +259,7 @@ const CategoryPage = () => {
 </section>
 <section className="py-12 px-6 bg-screenBackground">
     <h2 className="text-3xl font-bold text-blackLight mb-8 text-center">
-        Best <span className="text-primary">Deals</span> For You
+    {t("pages.outlet.bestDealsPrefix")} <span className="text-primary">{t("pages.outlet.bestDealsHighlight")}</span> {t("pages.outlet.bestDealsSuffix")}
     </h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {products.map((product) => (
@@ -285,7 +286,7 @@ const CategoryPage = () => {
                     <span className="text-greenDark text-sm font-medium">{product.discount}</span>
                 </div>
                 <button className="w-full py-2 mt-3 bg-primary hover:bg-primaryLight text-whiteOnly rounded-lg transition">
-                    Add to Cart
+                  {t("pages.outlet.addToCart")}
                 </button>
             </div>
         ))}
@@ -296,20 +297,20 @@ const CategoryPage = () => {
 <section className='py-16 px-8   text-black bg-screenBackground' data-aos="fade-up">
     <div className='max-w-6xl mx-auto'>
         <h1 className='text-3xl sm:text-4xl font-bold text-gray-900 mt-2'>
-            Frequently Asked Questions
+          {t("pages.outlet.faqHeading")}
         </h1>
         <div className='mt-8 space-y-6'>
             {faqs.map((faq, index) => (
                 <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className='border-b border-gray-300 pb-4'>
                     <button className='w-full flex justify-between items-center text-left text-lg text-gray-700 font-medium hover:text-gray-900' onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
-                        {faq.question}
+                      {t(`pages.outlet.faqs.${index}.question`, { defaultValue: faq.question })}
                         <span className='text-gray-500 text-lg'>
                             {activeIndex === index ? "−" : "+"}
                         </span>
                     </button>
                     {activeIndex === index && (
                         <p className='mt-3 text-gray-600 text-sm'>
-                            {faq.answer}
+                        {t(`pages.outlet.faqs.${index}.answer`, { defaultValue: faq.answer })}
                         </p>
                     )}
                 </div>
@@ -320,7 +321,7 @@ const CategoryPage = () => {
 
 {showButton && (
     <button className="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-white text-black border border-[#E80F88] font-bold py-3 px-6 rounded-full shadow-lg hover:text-white hover:bg-black hover:shadow-xl transition z-[1000]">
-        Download App
+    {t("pages.outlet.downloadApp")}
     </button>
 )}
 </>

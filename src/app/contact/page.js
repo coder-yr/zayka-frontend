@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { MdOutlineEmail } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -42,7 +44,7 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
+        alert(t("pages.contact.successAlert"));
         setFormData({
           name: "",
           phone: "",
@@ -50,11 +52,11 @@ const ContactForm = () => {
         });
       } else {
         const errorResponse = await response.json();
-        alert(`Error: ${errorResponse.error || "Something went wrong"}`);
+        alert(`${t("pages.contact.errorPrefix")}: ${errorResponse.error || t("pages.contact.genericError")}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to send the message. Please try again.");
+      alert(t("pages.contact.failedAlert"));
     }
   };
 
@@ -69,17 +71,17 @@ const ContactForm = () => {
             data-aos="fade-right"
           >
             <h6 className="text-[25px] font-semibold mb-6 text-primary" style={{ fontFamily: "sans-serif" }}>
-              Get in Touch
+              {t("pages.contact.getInTouch")}
             </h6>
             <h2 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl mb-6 leading-10 text-primaryOnly" style={{ fontFamily: "sans-serif" }}>
-              Are you ready to talk to <br />
-              us?
+              {t("pages.contact.headingLine1")} <br />
+              {t("pages.contact.headingLine2")}
             </h2>
             <div className="h-px w-3/4 bg-ashDark mb-6"></div>
             <div className="flex justify-center md:justify-start items-center space-x-4 text-blackLight">
               <MdOutlineEmail className="text-3xl text-primary" />
               <div>
-                <p className="font-semibold">Email</p>
+                <p className="font-semibold">{t("pages.contact.emailLabel")}</p>
                 <p className="text-blackColor">query@company.com</p>
               </div>
             </div>
@@ -94,7 +96,7 @@ const ContactForm = () => {
               className="text-[30px] font-semibold mb-6 text-primaryOnly"
               style={{ fontFamily: "Noto Sans, sans-serif" }}
             >
-              Send us a message
+              {t("pages.contact.sendUsMessage")}
             </h4>
             <form onSubmit={handleSubmit}>
               <div className="space-y-4">
@@ -106,7 +108,7 @@ const ContactForm = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Enter your name"
+                    placeholder={t("pages.contact.placeholderName")}
                     className="w-full p-4 border border-ashDark rounded-md text-blackColor bg-whiteOnly"
                     required
                   />
@@ -119,7 +121,7 @@ const ContactForm = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Enter your phone number"
+                    placeholder={t("pages.contact.placeholderPhone")}
                     className="w-full p-4 border border-ashDark rounded-md text-blackColor bg-whiteOnly"
                     required
                   />
@@ -131,7 +133,7 @@ const ContactForm = () => {
                     name="businessDescription"
                     value={formData.businessDescription}
                     onChange={handleChange}
-                    placeholder="Describe your business"
+                    placeholder={t("pages.contact.placeholderBusiness")}
                     className="w-full p-3 border border-ashDark rounded-md text-blackColor bg-whiteOnly"
                     rows="4"
                     required
@@ -144,7 +146,7 @@ const ContactForm = () => {
                   className="w-1/2 p-3 text-whiteColor rounded-md shadow-lg"
                   style={{ borderRadius: "40px", fontSize: 19, backgroundColor: "#E80F88" }}
                 >
-                  Send Message
+                  {t("pages.contact.sendMessage")}
                 </button>
               </div>
             </form>

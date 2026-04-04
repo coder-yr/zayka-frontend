@@ -5,6 +5,39 @@
 /* Prevent full page scroll */
 html, body {
   overflow-x: hidden;
+  text-align: start;
+}
+
+/* Logical spacing helpers for mixed LTR/RTL components */
+.inline-start-4 {
+  margin-inline-start: 1rem;
+}
+
+.inline-end-4 {
+  margin-inline-end: 1rem;
+}
+
+/* Generic RTL support */
+[dir="rtl"] .rtl-flip-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .rtl-text-start {
+  text-align: start;
+}
+
+/* Kiosk specific */
+[dir="rtl"] .kiosk-menu-layout {
+  flex-direction: row-reverse;
+}
+
+/* Cart specific */
+[dir="rtl"] .cart-main-layout {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .cart-summary-sticky {
+  direction: rtl;
 }
 
 /* Hide scrollbar */

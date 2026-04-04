@@ -11,79 +11,74 @@ import {
   Store,
   WifiOff,
 } from "lucide-react";
-
-const featuresData = [
-  {
-    title: "Quick Billing",
-    description:
-      "Lightning-fast billing interface with shortcut keys, barcode scanning, and multi-payment support.",
-    icon: Receipt,
-    colorClass: "text-blue-500",
-  },
-  {
-    title: "Spice Inventory",
-    description:
-      "Manage raw ingredients precisely with recipe-based inventory mapping and low-stock alerts.",
-    icon: Boxes,
-    colorClass: "text-amber-500",
-  },
-  {
-    title: "Sales Analytics",
-    description:
-      "Real-time insights into your top-selling items, peak hours, and overall business growth.",
-    icon: LineChart,
-    colorClass: "text-green-500",
-  },
-  {
-    title: "Kitchen Display (KDS)",
-    description:
-      "Send orders directly to the kitchen in real-time to reduce errors and improve prep times.",
-    icon: ChefHat,
-    colorClass: "text-[#E80F88]",
-  },
-  {
-    title: "Customer Loyalty",
-    description:
-      "Run points programs, fixed discounts, and custom marketing campaigns effortlessly.",
-    icon: Heart,
-    colorClass: "text-red-500",
-  },
-  {
-    title: "Staff Management",
-    description:
-      "Track attendance, manage shifts, and set specific role-based access permissions.",
-    icon: Users,
-    colorClass: "text-purple-500",
-  },
-  {
-    title: "Multi-Store Management",
-    description:
-      "Control all your outlets from a single dashboard, with centralized reporting and pricing.",
-    icon: Store,
-    colorClass: "text-indigo-500",
-  },
-  {
-    title: "Offline Mode",
-    description:
-      "Continue billing seamlessly even when the internet drops. Auto-syncs when online.",
-    icon: WifiOff,
-    colorClass: "text-slate-500",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const FeaturesSection = () => {
+  const { t } = useTranslation();
+
+  const featuresData = [
+    {
+      title: t("home.features.cards.quickBilling.title"),
+      description: t("home.features.cards.quickBilling.description"),
+      icon: Receipt,
+      colorClass: "text-blue-500",
+    },
+    {
+      title: t("home.features.cards.spiceInventory.title"),
+      description: t("home.features.cards.spiceInventory.description"),
+      icon: Boxes,
+      colorClass: "text-amber-500",
+    },
+    {
+      title: t("home.features.cards.salesAnalytics.title"),
+      description: t("home.features.cards.salesAnalytics.description"),
+      icon: LineChart,
+      colorClass: "text-green-500",
+    },
+    {
+      title: t("home.features.cards.kds.title"),
+      description: t("home.features.cards.kds.description"),
+      icon: ChefHat,
+      colorClass: "text-[#E80F88]",
+    },
+    {
+      title: t("home.features.cards.customerLoyalty.title"),
+      description: t("home.features.cards.customerLoyalty.description"),
+      icon: Heart,
+      colorClass: "text-red-500",
+    },
+    {
+      title: t("home.features.cards.staffManagement.title"),
+      description: t("home.features.cards.staffManagement.description"),
+      icon: Users,
+      colorClass: "text-purple-500",
+    },
+    {
+      title: t("home.features.cards.multiStore.title"),
+      description: t("home.features.cards.multiStore.description"),
+      icon: Store,
+      colorClass: "text-indigo-500",
+    },
+    {
+      title: t("home.features.cards.offlineMode.title"),
+      description: t("home.features.cards.offlineMode.description"),
+      icon: WifiOff,
+      colorClass: "text-slate-500",
+    },
+  ];
+
   return (
     <section className="bg-white dark:bg-black py-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-12">
         
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Everything you need to{" "}
-          <span className="text-[#E80F88]">Succeed</span>
+          {t("home.features.headingPrefix")} {" "}
+          <span className="text-[#E80F88]">{t("home.features.headingHighlight")}</span>
         </h2>
 
         <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mb-12">
-          A complete suite of tools designed specifically for food businesses and retail stores.
+          {t("home.features.description")}
         </p>
 
         {/* Horizontal row with scroll */}

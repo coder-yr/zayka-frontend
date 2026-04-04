@@ -2,8 +2,11 @@
 import React from "react";
 import Link from "next/link";
 import { PlayCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="overview" className="bg-white dark:bg-black dark:text-white pt-24 pb-16 md:pb-20 overflow-hidden flex items-center min-h-[90vh]">
       <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-24 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8">
@@ -13,27 +16,31 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#fce7f3] dark:bg-pink-900/30 text-[#E80F88] text-[10px] sm:text-xs font-bold tracking-widest mb-6 sm:mb-8">
             <span className="flex h-2 w-2 rounded-full bg-[#E80F88] animate-pulse"></span>
-            NEW VERSION 2.0 LIVE
+            {t("home.hero.badge")}
           </div>
 
           {/* Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] leading-[1.1] lg:leading-[1.05] font-extrabold text-[#111827] dark:text-white tracking-tight mb-6 sm:mb-8">
-            The Operating<br className="hidden lg:block" /> System<br className="hidden lg:block" /> for <span className="text-[#E80F88]">Modern Retail.</span>
+            {t("home.hero.headingLine1")}
+            <br className="hidden lg:block" />
+            {t("home.hero.headingLine2")}
+            <br className="hidden lg:block" />
+            {t("home.hero.headingPrefix")} <span className="text-[#E80F88]">{t("home.hero.headingHighlight")}</span>
           </h1>
 
           {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-lg mb-8 sm:mb-12 leading-relaxed">
-            Stop juggling multiple tools. Zayaka POS unifies your inventory, sales, and staff management into one beautiful, lightning-fast interface.
+            {t("home.hero.description")}
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
             <button className="flex items-center justify-center gap-2 bg-[#0F172A] text-white font-medium py-3 sm:py-3.5 px-6 sm:px-8 rounded-full shadow-lg hover:bg-[#1E293B] hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
               <PlayCircle size={20} className="text-white" />
-              Watch Interactive Demo
+              {t("home.hero.watchDemo")}
             </button>
             <Link href="/book-demo" className="flex items-center justify-center gap-2 bg-transparent border-2 border-gray-200 dark:border-gray-700 text-[#0F172A] dark:text-white font-medium py-3 sm:py-3.5 px-6 sm:px-8 rounded-full hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
-              Talk to Sales
+              {t("home.hero.talkToSales")}
             </Link>
           </div>
         </div>
@@ -53,7 +60,7 @@ const HeroSection = () => {
                   </div>
                   <div className="flex-1 text-center pr-5 sm:pr-6">
                     <span className="text-[9px] sm:text-[11px] font-semibold text-gray-400 tracking-widest uppercase">
-                      ZAYAKA CLOUD SAB POS APP
+                      {t("home.hero.browserTitle")}
                     </span>
                   </div>
                </div>
@@ -79,23 +86,23 @@ const HeroSection = () => {
                      {/* Mobile Content (Dashboard Actions) */}
                      <div className="p-3 sm:p-5 flex-1 flex flex-col gap-2.5 sm:gap-4 overflow-hidden pb-0">
                        <div className="flex justify-between items-center mb-0.5 sm:mb-1">
-                         <span className="text-[11px] sm:text-sm font-bold text-gray-800 dark:text-gray-100 uppercase tracking-wide">Dashboard Actions</span>
+                         <span className="text-[11px] sm:text-sm font-bold text-gray-800 dark:text-gray-100 uppercase tracking-wide">{t("home.hero.dashboardActions")}</span>
                        </div>
                        
                        <div className="bg-white dark:bg-[#0F172A] border border-gray-100 dark:border-gray-700 p-2.5 sm:p-4 rounded-lg sm:rounded-xl flex items-center justify-between shadow-sm">
-                          <span className="text-[12px] sm:text-sm font-medium text-gray-700 dark:text-gray-300">Start a new order</span>
+                          <span className="text-[12px] sm:text-sm font-medium text-gray-700 dark:text-gray-300">{t("home.hero.actionStartOrder")}</span>
                           <span className="text-gray-400 text-[10px] sm:text-sm font-semibold">{'>'}</span>
                        </div>
                        <div className="bg-white dark:bg-[#0F172A] border border-gray-100 dark:border-gray-700 p-2.5 sm:p-4 rounded-lg sm:rounded-xl flex items-center justify-between shadow-sm">
-                          <span className="text-[12px] sm:text-sm font-medium text-gray-700 dark:text-gray-300">View current orders</span>
+                          <span className="text-[12px] sm:text-sm font-medium text-gray-700 dark:text-gray-300">{t("home.hero.actionViewOrders")}</span>
                           <span className="text-gray-400 text-[10px] sm:text-sm font-semibold">{'>'}</span>
                        </div>
                        <div className="bg-white dark:bg-[#0F172A] border border-gray-100 dark:border-gray-700 p-2.5 sm:p-4 rounded-lg sm:rounded-xl flex items-center justify-between shadow-sm">
-                          <span className="text-[12px] sm:text-sm font-medium text-gray-700 dark:text-gray-300">Inventory Management</span>
+                          <span className="text-[12px] sm:text-sm font-medium text-gray-700 dark:text-gray-300">{t("home.hero.actionInventory")}</span>
                           <span className="text-gray-400 text-[10px] sm:text-sm font-semibold">{'>'}</span>
                        </div>
                        <div className="bg-white dark:bg-[#0F172A] border border-gray-100 dark:border-gray-700 p-2.5 sm:p-4 rounded-lg sm:rounded-xl flex items-center justify-between shadow-sm">
-                          <span className="text-[12px] sm:text-sm font-medium text-gray-700 dark:text-gray-300">Close register</span>
+                          <span className="text-[12px] sm:text-sm font-medium text-gray-700 dark:text-gray-300">{t("home.hero.actionCloseRegister")}</span>
                           <span className="text-gray-400 text-[10px] sm:text-sm font-semibold">{'>'}</span>
                        </div>
                        

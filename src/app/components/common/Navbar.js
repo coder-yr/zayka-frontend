@@ -3,9 +3,12 @@ import { useState,useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Utensils, Coffee, IceCream, Cake, Beer, Pizza, Store } from "lucide-react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = ({ toggleTheme, theme }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t } = useTranslation();
 
   
 
@@ -23,18 +26,18 @@ const Navbar = ({ toggleTheme, theme }) => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 text-black dark:text-white font-medium">
           <NavItem
-            title="Features"
+            title={t("features")}
             options={[
-              { name: "POS System", path: "/features/pos" },
-              { name: "Inventory", path: "/features/inventory" },
-              { name: "Analytics", path: "/features/analytics" },
+              { name: t("nav.posSystem"), path: "/features/pos" },
+              { name: t("nav.inventory"), path: "/features/inventory" },
+              { name: t("nav.analytics"), path: "/features/analytics" },
             ]}
           />
-          <NavItem title="Pricing" path="/pricing" noDropdown />
-          <NavItem title="Our Products" isMultiColumn />
-          <NavItem title="Outlet Types" isMultiColumn1 />
-          <NavItem title="Become a Partner" path="/partner" noDropdown />
-          <NavItem title="Contact Us" path="/contact" noDropdown />
+          <NavItem title={t("pricing")} path="/pricing" noDropdown />
+          <NavItem title={t("our_products")} isMultiColumn />
+          <NavItem title={t("outlet_types")} isMultiColumn1 />
+          <NavItem title={t("become_partner")} path="/partner" noDropdown />
+          <NavItem title={t("contact_us")} path="/contact" noDropdown />
         </div>
         {/* Dark Mode Toggle */}
         {/* <div className="ms-auto shrink hidden lg:inline-flex gap-4"> */}
@@ -51,10 +54,14 @@ const Navbar = ({ toggleTheme, theme }) => {
 </label>
         {/* </div> */}
         {/* Button */}
+        <div className="hidden md:block">
+          <LanguageSwitcher compact />
+        </div>
+
         <div>
         <Link href="/book-demo">
           <button className="border border-[#E80F88] px-6 py-2 rounded-md font-medium hidden md:block">
-            Book A Demo
+            {t("book_demo")}
           </button>
         </Link>
         </div>
@@ -68,17 +75,18 @@ const Navbar = ({ toggleTheme, theme }) => {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden flex flex-col bg-white shadow-md mt-4 p-4 space-y-3">
-          <NavItem title="Features" options={[
-            "POS System", "Inventory", "Analytics"
+          <LanguageSwitcher />
+          <NavItem title={t("features")} options={[
+            t("nav.posSystem"), t("nav.inventory"), t("nav.analytics")
           ]} mobile />
-          <NavItem title="Pricing" path="/pricing" noDropdown mobile />
-          <NavItem title="Our Products" isMultiColumn mobile />
-          <NavItem title="Outlet Types" isMultiColumn mobile />
-          <NavItem title="Become a Partner" path="/become-a-partner" noDropdown mobile />
-          <NavItem title="Contact Us" path="/contact" noDropdown mobile />
+          <NavItem title={t("pricing")} path="/pricing" noDropdown mobile />
+          <NavItem title={t("our_products")} isMultiColumn mobile />
+          <NavItem title={t("outlet_types")} isMultiColumn mobile />
+          <NavItem title={t("become_partner")} path="/become-a-partner" noDropdown mobile />
+          <NavItem title={t("contact_us")} path="/contact" noDropdown mobile />
           <Link href="/book-demo">
             <button className="border border-[#E80F88] px-6 py-2 rounded-md font-medium w-full">
-              Book A Demo
+              {t("book_demo")}
             </button>
           </Link>
         </div>
@@ -170,7 +178,7 @@ const NavItem = ({ title, options, path, isMultiColumn, isMultiColumn1, noDropdo
 
       {/* Multi-column Dropdown */}
       {!noDropdown && isMultiColumn && open && (
-        <div className="absolute left-0 mt-2 left-1/3 transform -translate-x-1/3 mt-2 w-screen h-[55vh] px-10 pt-2 bg-white flex flex-row justify-between shadow-lg overflow-auto z-50">
+        <div className="absolute left-1/3 mt-2 transform -translate-x-1/3 w-screen h-[55vh] px-10 pt-2 bg-white flex flex-row justify-between shadow-lg overflow-auto z-50">
           {Object.entries(categories).map(([category, items], index) => (
             <div key={index} className="w-[22%] font-bold text-md">
               <h1 className="font-sans text-appColor">{category}</h1>

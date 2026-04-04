@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useFeatures } from "@/context/FeatureContext";
+import { useTranslation } from "react-i18next";
 
 const StickySubmenu = () => {
   const { features = [] } = useFeatures(); // Getting all features globally
+  const { t } = useTranslation();
   const [isSticky, setIsSticky] = useState(false);
   const pathname = usePathname();
 
@@ -48,6 +50,8 @@ const StickySubmenu = () => {
             {menuFeatures.map((item) => {
               const featurePath = `/features/${item.slug}`;
               const isActive = pathname === featurePath;
+              const localizedFeature = t(`pages.featureDetail.features.${item.slug}`, { returnObjects: true, defaultValue: {} });
+              const featureTitle = localizedFeature?.title || item.title;
               
               return (
                 <li key={item.id} className="flex-shrink-0">
@@ -59,7 +63,7 @@ const StickySubmenu = () => {
                         : "border-transparent text-gray-500 font-medium hover:text-[#E80F88] dark:text-gray-400 dark:hover:text-pink-400 hover:border-pink-200 dark:hover:border-pink-900/50"
                       }`}
                   >
-                    {item.title}
+                    {featureTitle}
                   </Link>
                 </li>
               );

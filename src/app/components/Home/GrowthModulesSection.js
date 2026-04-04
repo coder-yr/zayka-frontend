@@ -1,8 +1,11 @@
 "use client";
 import React from "react";
 import { Armchair, Bike, BarChart2, User, Check, AlertCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const GrowthModulesSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-12 sm:py-16 lg:py-20 overflow-hidden bg-[#F8F9FB] dark:bg-black">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16">
@@ -14,7 +17,7 @@ const GrowthModulesSection = () => {
             <div className="absolute top-0 left-0 lg:left-0 w-48 sm:w-64 h-56 sm:h-72 rounded-3xl overflow-hidden shadow-2xl z-10 transition-transform duration-500 hover:scale-105">
               <img 
                 src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Dine-in Excellence"
+                alt={t("home.growth.imageAltDineIn")}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -23,7 +26,7 @@ const GrowthModulesSection = () => {
             <div className="absolute top-24 left-28 sm:left-48 w-44 sm:w-64 h-52 sm:h-72 rounded-3xl overflow-hidden shadow-2xl z-20 transition-transform duration-500 hover:scale-105">
               <img 
                 src="https://images.unsplash.com/photo-1587502537745-84b86da1204f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Chef Preparing Food"
+                alt={t("home.growth.imageAltChef")}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -33,7 +36,7 @@ const GrowthModulesSection = () => {
           <div className="w-full lg:w-[52%] flex flex-col mt-4 sm:mt-6 lg:mt-0">
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-gray-900 dark:text-white leading-tight mb-8 sm:mb-12">
-              Modules Built for Growth
+              {t("home.growth.heading")}
             </h2>
 
             {/* Module 1: Dine-in Excellence */}
@@ -43,10 +46,10 @@ const GrowthModulesSection = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-wide">
-                  Dine-in Excellence
+                  {t("home.growth.moduleDineIn.title")}
                 </h3>
                 <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
-                  Interactive table management with visual maps. Handle split bills and table transfers with a single tap.
+                  {t("home.growth.moduleDineIn.description")}
                 </p>
               </div>
             </div>
@@ -58,10 +61,10 @@ const GrowthModulesSection = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-wide">
-                  Seamless Delivery
+                  {t("home.growth.moduleDelivery.title")}
                 </h3>
                 <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
-                  Direct integration with Swiggy, Zomato, and Dunzo. Manage all online orders from a single screen.
+                  {t("home.growth.moduleDelivery.description")}
                 </p>
               </div>
             </div>
@@ -73,10 +76,10 @@ const GrowthModulesSection = () => {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 tracking-wide">
-                  Insightful Analytics
+                  {t("home.growth.moduleAnalytics.title")}
                 </h3>
                 <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
-                  Daily reports on best-selling dishes, peak hours, and server performance sent directly to your phone.
+                  {t("home.growth.moduleAnalytics.description")}
                 </p>
               </div>
             </div>
@@ -88,29 +91,29 @@ const GrowthModulesSection = () => {
           {/* Left Side: Text */}
           <div className="w-full lg:w-[52%] flex flex-col lg:-ml-4" data-aos="fade-right">
             <div className="inline-flex items-center self-start px-3 py-1 rounded-full bg-[#FFF9E5] dark:bg-[#2A2412] text-[#D4AF37] dark:text-[#F0D77A] text-[10px] font-black tracking-[0.2em] uppercase mb-6 shadow-sm border border-[#F2E5B3] dark:border-[#3F361B]">
-              FLOOR CONTROL
+              {t("home.growth.floorControlBadge")}
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-gray-900 dark:text-white leading-tight mb-6">
-              Interactive Floor Map
+              {t("home.growth.floorControlHeading")}
             </h2>
 
             <p className="text-[17px] text-gray-500 dark:text-gray-300 leading-relaxed mb-10 max-w-xl">
-              Monitor your floor in real-time with color-coded status updates. Know exactly which tables are free, occupied, or awaiting the bill at a glance.
+              {t("home.growth.floorControlDescription")}
             </p>
 
             <div className="flex flex-wrap items-center gap-6 text-sm font-bold text-gray-700 dark:text-gray-200">
               <div className="flex items-center gap-2">
                 <span className="w-3.5 h-3.5 rounded-full bg-[#1DB954]"></span>
-                Available
+                {t("home.growth.statusAvailable")}
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-3.5 h-3.5 rounded-full bg-[#FFB300]"></span>
-                Occupied
+                {t("home.growth.statusOccupied")}
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-3.5 h-3.5 rounded-full bg-[#EE4B2B]"></span>
-                Dirty / Delay
+                {t("home.growth.statusDirty")}
               </div>
             </div>
           </div>
@@ -136,7 +139,7 @@ const GrowthModulesSection = () => {
                   <User size={16} className="text-[#FFB300]" />
                 </div>
                 <div className="col-span-2 row-span-1 bg-[#E8EEF2] dark:bg-[#1F2937] rounded-xl flex items-center justify-center">
-                  <span className="text-xs sm:text-sm font-black text-gray-500 dark:text-gray-300 tracking-wide">MAIN DINING AREA</span>
+                  <span className="text-xs sm:text-sm font-black text-gray-500 dark:text-gray-300 tracking-wide">{t("home.growth.mainDiningArea")}</span>
                 </div>
                 <div className="col-span-1 row-span-1 bg-[#E8F5E9] dark:bg-[#1D3324] border-2 border-[#81C784] dark:border-[#3F8A54] rounded-xl flex flex-col items-center justify-center text-gray-800 dark:text-gray-100">
                   <span className="text-xs font-black text-green-700 dark:text-green-300 mb-1">T5</span>

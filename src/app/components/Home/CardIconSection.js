@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 const cards = [
     { title: "Billing", description: "Create customized GST bills in 10+ formats that comply with the goods and services tax laws of India. Share bills with customers on WhatsApp.", icon: "📄" },
     { title: "Inventory", description: "Track complete inventory with parameters like serial number, batch number, expiry date and more. Check item-wise P&L, discount reports, etc.", icon: "📦" },
@@ -17,12 +18,13 @@ const cards = [
   ];
 
 const CardLayout = () => {
+  const { t } = useTranslation();
   const [showMore, setShowMore] = useState(false);
   const displayedCards = showMore ? cards : cards.slice(0, 8); // Initially show only 2 rows (8 cards).
   return (
     <section className="bg-screenBackground dark:bg-black">
     <div className=" py-12 px-6 lg:mr-24 lg:ml-24 mb-8">
-    <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white mb-24">Our Services</h2>
+    <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white mb-24">{t("components.cardIcon.servicesHeading")}</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-24">
       {displayedCards.map((card, index) => (
         <div
@@ -37,8 +39,8 @@ const CardLayout = () => {
             <div className="text-5xl">{card.icon}</div>
           </div>
           <div className="mt-12">
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">{card.title}</h3>
-            <p className="text-gray-600 dark:text-white text-sm">{card.description}</p>
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">{t(`components.cardIcon.cards.${index}.title`, { defaultValue: card.title })}</h3>
+            <p className="text-gray-600 dark:text-white text-sm">{t(`components.cardIcon.cards.${index}.description`, { defaultValue: card.description })}</p>
           </div>
         </div>
       ))}
@@ -49,14 +51,14 @@ const CardLayout = () => {
           onClick={() => setShowMore(true)}
           className="border border-[#E80F88] text-black dark:text-white font-medium py-3 px-8 rounded-lg shadow hover:shadow-xl transition-all duration-300"
         >
-          View More
+          {t("components.cardIcon.viewMore")}
         </button>
       ) : (
         <button
           onClick={() => setShowMore(false)}
           className="bg-black text-white py-3 px-8 rounded-lg shadow hover:bg-gray-600 hover:shadow-xl transition-all duration-300"
         >
-          Hide Cards
+          {t("components.cardIcon.hideCards")}
         </button>
       )}
     </div>

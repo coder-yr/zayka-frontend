@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Search, ShoppingCart, ChevronRight, Plus, Apple, Play, Check } from "lucide-react";
 import { homeContentService } from "@/lib/api";
 import { useCart } from "@/context/CartContext";
+import { useTranslation } from "react-i18next";
 // We use Play as a stand-in for Google Play icon if we don't have it, but standard layout used specific SVG/icon.
 // We'll use simple SVGs for App Store and Google Play for accuracy.
 
@@ -88,6 +89,7 @@ const normalizeHomeContent = (data) => {
 // ---- COMPONENTS ---- //
 
 function Navbar() {
+  const { t } = useTranslation();
   const { cartItems } = useCart();
   const cartTotalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -109,11 +111,11 @@ function Navbar() {
         {/* Center Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
           <Link href="#" className="text-gray-900 relative">
-            Menu
+            {t("menu")}
             <span className="absolute -bottom-1.5 left-0 w-full h-[2px] bg-[#C82333] rounded-full"></span>
           </Link>
-          <Link href="/reservations" className="hover:text-gray-900 transition-colors">Reservations</Link>
-          <Link href="/our-story" className="hover:text-gray-900 transition-colors">Our Story</Link>
+          <Link href="/reservations" className="hover:text-gray-900 transition-colors">{t("reservations")}</Link>
+          <Link href="/our-story" className="hover:text-gray-900 transition-colors">{t("our_story")}</Link>
         </div>
 
         {/* Right Actions */}
@@ -121,7 +123,7 @@ function Navbar() {
           <div className="relative hidden lg:block">
             <input 
               type="text" 
-              placeholder="Search for dishes..." 
+              placeholder={t("find_dish")} 
               className="bg-gray-100 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 w-64"
             />
             <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -152,6 +154,8 @@ function Navbar() {
 }
 
 function CustomFooter() {
+  const { t } = useTranslation();
+
   return (
     <footer className="w-full bg-[#FCFBF9] pt-16 pb-8 border-t border-gray-100 px-6 md:px-12 mt-20">
       <div className="max-w-7xl mx-auto">
@@ -166,7 +170,7 @@ function CustomFooter() {
               <span className="font-bold text-gray-900 text-lg">Zayaka</span>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed mb-6">
-              Redefining the digital dining experience through precision, passion, and unparalleled flavour delivery.
+              {t("pages.homeStandalone.footerDescription")}
             </p>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-200 transition-colors text-gray-700 font-bold text-xs">𝕏</div>
@@ -176,41 +180,41 @@ function CustomFooter() {
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 mb-5">Company</h4>
+            <h4 className="font-bold text-gray-900 mb-5">{t("components.footer.company")}</h4>
             <ul className="space-y-4 text-sm text-gray-500">
-              <li><Link href="#" className="hover:text-gray-900">Our Story</Link></li>
-              <li><Link href="#" className="hover:text-gray-900">Careers</Link></li>
-              <li><Link href="#" className="hover:text-gray-900">Partner with Us</Link></li>
-              <li><Link href="#" className="hover:text-gray-900">Blog</Link></li>
+              <li><Link href="#" className="hover:text-gray-900">{t("our_story")}</Link></li>
+              <li><Link href="#" className="hover:text-gray-900">{t("components.footer.careers")}</Link></li>
+              <li><Link href="#" className="hover:text-gray-900">{t("pages.homeStandalone.partnerWithUs")}</Link></li>
+              <li><Link href="#" className="hover:text-gray-900">{t("pages.homeStandalone.blog")}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 mb-5">Support</h4>
+            <h4 className="font-bold text-gray-900 mb-5">{t("components.footer.support")}</h4>
             <ul className="space-y-4 text-sm text-gray-500">
-              <li><Link href="#" className="hover:text-gray-900">Help Center</Link></li>
-              <li><Link href="#" className="hover:text-gray-900">Safety</Link></li>
-              <li><Link href="#" className="hover:text-gray-900">Contact Us</Link></li>
-              <li><Link href="#" className="hover:text-gray-900">Terms</Link></li>
+              <li><Link href="#" className="hover:text-gray-900">{t("components.footer.helpCenter")}</Link></li>
+              <li><Link href="#" className="hover:text-gray-900">{t("pages.homeStandalone.safety")}</Link></li>
+              <li><Link href="#" className="hover:text-gray-900">{t("contact_us")}</Link></li>
+              <li><Link href="#" className="hover:text-gray-900">{t("pages.homeStandalone.terms")}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 mb-5">Download Our App</h4>
+            <h4 className="font-bold text-gray-900 mb-5">{t("pages.homeStandalone.downloadOurApp")}</h4>
             <div className="space-y-3">
               <button className="w-full bg-[#1A1A1A] text-white rounded-lg flex items-center px-4 py-2 hover:bg-black transition-colors">
                 <Apple className="w-6 h-6 mr-3" />
                 <div className="text-left">
-                  <div className="text-[9px] text-gray-400 font-medium">DOWNLOAD ON THE</div>
-                  <div className="text-[13px] font-semibold tracking-wide leading-none">App Store</div>
+                  <div className="text-[9px] text-gray-400 font-medium">{t("pages.homeStandalone.downloadOn")}</div>
+                  <div className="text-[13px] font-semibold tracking-wide leading-none">{t("pages.homeStandalone.appStore")}</div>
                 </div>
               </button>
               <button className="w-full bg-[#1A1A1A] text-white rounded-lg flex items-center px-4 py-2 hover:bg-black transition-colors">
                 {/* Fallback play icon since we don't have the Google Play svg easily imported */}
                 <Play className="w-5 h-5 mr-4 ml-0.5 fill-white" />
                 <div className="text-left">
-                  <div className="text-[9px] text-gray-400 font-medium">GET IT ON</div>
-                  <div className="text-[13px] font-semibold tracking-wide leading-none">Google Play</div>
+                  <div className="text-[9px] text-gray-400 font-medium">{t("pages.homeStandalone.getItOn")}</div>
+                  <div className="text-[13px] font-semibold tracking-wide leading-none">{t("pages.homeStandalone.googlePlay")}</div>
                 </div>
               </button>
             </div>
@@ -219,10 +223,10 @@ function CustomFooter() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between border-t border-gray-200 pt-8 text-xs text-gray-400 font-medium">
-          <p>© 2024 Zayaka. All rights reserved.</p>
+          <p>{t("pages.homeStandalone.copyright")}</p>
           <div className="flex items-center gap-6 mt-4 md:mt-0 uppercase tracking-widest">
-            <Link href="#" className="hover:text-gray-600">Privacy Policy</Link>
-            <Link href="#" className="hover:text-gray-600">Terms of Service</Link>
+            <Link href="#" className="hover:text-gray-600">{t("privacy_policy")}</Link>
+            <Link href="#" className="hover:text-gray-600">{t("terms_service")}</Link>
           </div>
         </div>
       </div>
@@ -231,6 +235,7 @@ function CustomFooter() {
 }
 
 export default function StandaloneHomePage() {
+  const { t } = useTranslation();
   const [homeContent, setHomeContent] = useState(DEFAULT_HOME_CONTENT);
   const apiOrigin = useMemo(
     () => (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/api\/?$/, ""),
@@ -356,7 +361,7 @@ export default function StandaloneHomePage() {
         <section>
           <div className="flex items-center gap-4 mb-8">
             <div className="w-6 h-[2px] bg-[#C82333]"></div>
-            <h2 className="text-xl font-bold text-gray-900 tracking-tight">Inspiration for your first order</h2>
+            <h2 className="text-xl font-bold text-gray-900 tracking-tight">{t("pages.homeStandalone.inspiration")}</h2>
           </div>
 
           <div className="flex items-center justify-between gap-4 overflow-x-auto pb-4 hide-scrollbar">
@@ -376,11 +381,11 @@ export default function StandaloneHomePage() {
         <section>
           <div className="flex items-end justify-between mb-8">
             <div>
-              <div className="text-[10px] font-bold text-[#C82333] uppercase tracking-widest mb-1">Top Picks</div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">Trending Delicacies</h2>
+              <div className="text-[10px] font-bold text-[#C82333] uppercase tracking-widest mb-1">{t("pages.homeStandalone.topPicks")}</div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">{t("pages.homeStandalone.trendingDelicacies")}</h2>
             </div>
             <button className="flex items-center text-sm font-medium text-gray-600 hover:text-gray-900 group">
-              Explore All <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              {t("pages.homeStandalone.exploreAll")} <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -454,7 +459,7 @@ export default function StandaloneHomePage() {
         {/* SIGNATURE MENU SECTION */}
         <section className="pt-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Explore Our Signature Menu</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">{t("pages.homeStandalone.signatureMenu")}</h2>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {menuTabs.map((tab, idx) => (
                 <button 
@@ -484,7 +489,7 @@ export default function StandaloneHomePage() {
                   {/* Hover Add Overlay */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                      <Plus className="w-4 h-4" /> Add
+                      <Plus className="w-4 h-4" /> {t("add_to_order")}
                     </div>
                   </div>
                 </div>
@@ -496,7 +501,7 @@ export default function StandaloneHomePage() {
 
           <div className="mx-auto w-max">
             <button className="bg-white border border-gray-200 text-gray-900 font-medium text-sm px-6 py-3 rounded-xl flex items-center hover:bg-gray-50 transition-colors shadow-sm">
-              View Full Menu <ChevronRight className="w-4 h-4 ml-2" />
+              {t("pages.homeStandalone.viewFullMenu")} <ChevronRight className="w-4 h-4 ml-2" />
             </button>
           </div>
         </section>

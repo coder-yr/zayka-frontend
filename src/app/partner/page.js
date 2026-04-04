@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 // import { MdOutlineEmail } from "react-icons/md";
 import { MdOutlineCheckCircle } from "react-icons/md";
 import CardIconSection from '../components/Home/CardIconSection';
+import { useTranslation } from "react-i18next";
 const service = [
   {
     title: "Mobile App Development",
@@ -33,6 +34,7 @@ const faqs = [
   { question: "Is the payment service secure?", answer: "Yes, we use secure and encrypted payment services." },
 ];
 const ContactForm = () => {
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -69,7 +71,7 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
+        alert(t("pages.partner.successAlert"));
         setFormData({
           name: "",
           phone: "",
@@ -78,11 +80,11 @@ const ContactForm = () => {
         });
       } else {
         const errorResponse = await response.json();
-        alert(`Error: ${errorResponse.error || "Something went wrong"}`);
+        alert(`${t("pages.partner.errorPrefix")}: ${errorResponse.error || t("pages.partner.genericError")}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to send the message. Please try again.");
+      alert(t("pages.partner.failedAlert"));
     }
   };
 
@@ -96,26 +98,25 @@ const ContactForm = () => {
               data-aos="fade-right"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-8 leading-snug md:leading-[1.8]">
-                Join 27,000+ Zaykapos <br /> Partners Worldwide
+                {t("pages.partner.heroHeadingLine1")} <br /> {t("pages.partner.heroHeadingLine2")}
               </h2>
 
               <ul className="space-y-6 text-lg text-gray-700 w-full">
                 <li className="flex items-start space-x-3">
                   <MdOutlineCheckCircle className="text-primary text-2xl mt-1" />
                   <p>
-                    Join Vyapar, the fastest growing Billing & Accounting software for
-                    small businesses
+                    {t("pages.partner.point1")}
                   </p>
                 </li>
 
                 <li className="flex items-start space-x-3">
                   <MdOutlineCheckCircle className="text-primary text-2xl mt-1" />
-                  <p>Zero investment and no infrastructure required</p>
+                  <p>{t("pages.partner.point2")}</p>
                 </li>
 
                 <li className="flex items-start space-x-3">
                   <MdOutlineCheckCircle className="text-primary text-2xl mt-1" />
-                  <p>Payment settlements every week</p>
+                  <p>{t("pages.partner.point3")}</p>
                 </li>
               </ul>
             </div>
@@ -128,7 +129,7 @@ const ContactForm = () => {
                 className="text-[30px] font-semibold mb-6 text-primary"
                 style={{ fontFamily: "Noto Sans, sans-serif" }}
               >
-                Send us a message
+                {t("pages.partner.sendUsMessage")}
               </h4>
               <form onSubmit={handleSubmit}>
                 <div className="space-y-4">
@@ -137,7 +138,7 @@ const ContactForm = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Enter your name"
+                    placeholder={t("pages.contact.placeholderName")}
                     className="w-full p-4 border border-ash rounded-md text-blackColor"
                     required
                   />
@@ -146,7 +147,7 @@ const ContactForm = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Enter your phone number"
+                    placeholder={t("pages.contact.placeholderPhone")}
                     className="w-full p-4 border border-ash rounded-md text-blackColor"
                     required
                   />
@@ -155,7 +156,7 @@ const ContactForm = () => {
                     name="pincode"
                     value={formData.pincode}
                     onChange={handleChange}
-                    placeholder="Enter your PIN code"
+                    placeholder={t("pages.partner.placeholderPincode")}
                     className="w-full p-4 border border-ash rounded-md text-blackColor"
                     required
                   />
@@ -163,7 +164,7 @@ const ContactForm = () => {
                     name="businessDescription"
                     value={formData.businessDescription}
                     onChange={handleChange}
-                    placeholder="Describe your business"
+                    placeholder={t("pages.contact.placeholderBusiness")}
                     className="w-full p-3 border border-ash rounded-md text-blackColor"
                     rows="4"
                     required
@@ -173,7 +174,7 @@ const ContactForm = () => {
                     className="w-1/2 p-3 text-whiteOnly rounded-md shadow-lg bg-primary"
                     style={{ borderRadius: "40px", fontSize: 19 }}
                   >
-                    Send Message
+                    {t("pages.contact.sendMessage")}
                   </button>
                 </div>
               </form>
@@ -202,8 +203,8 @@ const ContactForm = () => {
 
             {/* Content Section */}
             <div className="w-full md:w-1/2 self-start">
-              <h2 className="text-4xl font-bold text-primary">{service.title}</h2>
-              <p className="text-ashDark mt-4">{service.description}</p>
+                <h2 className="text-4xl font-bold text-primary">{t(`pages.partner.services.${index}.title`, { defaultValue: service.title })}</h2>
+                <p className="text-ashDark mt-4">{t(`pages.partner.services.${index}.description`, { defaultValue: service.description })}</p>
             </div>
           </div>
         ))}
@@ -212,20 +213,20 @@ const ContactForm = () => {
       <section className='py-16 px-8 text-black bg-screenBackground' data-aos="fade-up">
         <div className='max-w-6xl mx-auto'>
           <h1 className='text-3xl sm:text-4xl font-bold text-gray-900 mt-2'>
-            Frequently Asked Questions
+              {t("pages.partner.faqHeading")}
           </h1>
           <div className='mt-8 space-y-6'>
             {faqs.map((faq, index) => (
               <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className='border-b border-gray-300 pb-4'>
                 <button className='w-full flex justify-between items-center text-left text-lg text-gray-700 font-medium hover:text-gray-900' onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
-                  {faq.question}
+                  {t(`pages.partner.faqs.${index}.question`, { defaultValue: faq.question })}
                   <span className='text-gray-500 text-lg'>
                     {activeIndex === index ? "−" : "+"}
                   </span>
                 </button>
                 {activeIndex === index && (
                   <p className='mt-3 text-gray-600 text-sm'>
-                    {faq.answer}
+                    {t(`pages.partner.faqs.${index}.answer`, { defaultValue: faq.answer })}
                   </p>
                 )}
               </div>

@@ -1,0 +1,488 @@
+{
+  "welcome": "مرحبا",
+  "order_now": "اطلب الآن",
+  "cart": "السلة",
+  "checkout": "الدفع",
+  "total": "الإجمالي",
+  "confirm_order": "تأكيد الطلب",
+  "language": "اللغة",
+  "english": "EN",
+  "arabic": "AR",
+  "touch_to_start": "اضغط للبدء",
+  "fresh_fast_delicious": "طازج. سريع. لذيذ.",
+  "cancel_order": "إلغاء الطلب",
+  "your_order": "طلبك",
+  "items_count": "{{count}} عناصر",
+  "your_cart_empty": "سلتك فارغة",
+  "select_items_prompt": "يرجى اختيار العناصر من القائمة لبناء طلبك.",
+  "subtotal": "المجموع الفرعي",
+  "tax": "الضريبة (5%)",
+  "pay_now": "ادفع الآن",
+  "where_eating": "أين ستتناول الطعام؟",
+  "payment_method_question": "كيف تود الدفع؟",
+  "dine_in": "داخل المطعم",
+  "takeaway": "سفري",
+  "payment_success": "تم الدفع بنجاح!",
+  "order_sent_kitchen": "تم إرسال طلبك إلى المطبخ.",
+  "order_number": "رقم الطلب",
+  "estimated_prep_time": "الوقت المتوقع للتحضير:",
+  "mins_10_15": "10-15 دقيقة",
+  "done": "تم",
+  "reset_soon": "سيتم إعادة ضبط التطبيق تلقائيا خلال 30 ثانية...",
+  "menu": "القائمة",
+  "reservations": "الحجوزات",
+  "our_story": "قصتنا",
+  "find_dish": "ابحث عن طبق...",
+  "your_cart_items": "سلتك ({{count}} عناصر)",
+  "browse_menu": "تصفح القائمة",
+  "order_summary": "ملخص الطلب",
+  "delivery": "التوصيل",
+  "coupon_code": "كود الخصم",
+  "apply": "تطبيق",
+  "proceed_to_checkout": "المتابعة إلى الدفع",
+  "delivery_to": "التوصيل إلى",
+  "change_address": "تغيير العنوان",
+  "privacy_policy": "سياسة الخصوصية",
+  "terms_service": "شروط الخدمة",
+  "accessibility": "إمكانية الوصول",
+  "contact_us": "اتصل بنا",
+  "fast_delivery": "توصيل سريع",
+  "eta_25_35": "الوقت المتوقع للوصول 25-35 دقيقة",
+  "complimentary_side": "طبق جانبي مجاني؟",
+  "add_signature_side": "أضف خبز الثوم المميز لدينا مقابل 4.99$ فقط",
+  "add_to_order": "أضف إلى الطلب",
+  "recommended": "موصى به",
+  "burgers": "برغر",
+  "pizza": "بيتزا",
+  "beverages": "مشروبات",
+  "desserts": "حلويات",
+  "book_demo": "احجز تجربة",
+  "features": "المميزات",
+  "pricing": "الأسعار",
+  "our_products": "منتجاتنا",
+  "outlet_types": "أنواع الفروع",
+  "become_partner": "كن شريكا",
+  "nav": {
+    "posSystem": "نظام نقاط البيع",
+    "inventory": "المخزون",
+    "analytics": "التحليلات",
+    "upi_qr": "مدفوعات UPI QR"
+  },
+  "home": {
+    "hero": {
+      "badge": "الإصدار الجديد 2.0 متاح الآن",
+      "headingLine1": "نظام التشغيل",
+      "headingLine2": "الأمثل",
+      "headingPrefix": "لـ",
+      "headingHighlight": "التجزئة الحديثة.",
+      "description": "توقف عن استخدام أدوات متعددة. زايكا بوس يوحد إدارة المخزون والمبيعات والموظفين في واجهة واحدة سريعة ومميزة.",
+      "watchDemo": "شاهد العرض التفاعلي",
+      "talkToSales": "تواصل مع المبيعات",
+      "browserTitle": "تطبيق زايكا كلاود ساب بوس",
+      "dashboardActions": "إجراءات لوحة التحكم",
+      "actionStartOrder": "ابدأ طلبا جديدا",
+      "actionViewOrders": "عرض الطلبات الحالية",
+      "actionInventory": "إدارة المخزون",
+      "actionCloseRegister": "إغلاق الصندوق"
+    },
+    "features": {
+      "headingPrefix": "كل ما تحتاجه من أجل",
+      "headingHighlight": "النجاح",
+      "description": "مجموعة متكاملة من الأدوات المصممة خصيصا لأعمال المطاعم والتجزئة.",
+      "cards": {
+        "quickBilling": {
+          "title": "فوترة سريعة",
+          "description": "واجهة فوترة فائقة السرعة مع اختصارات لوحة المفاتيح ومسح الباركود ودعم تعدد طرق الدفع."
+        },
+        "spiceInventory": {
+          "title": "إدارة المخزون",
+          "description": "إدارة دقيقة للمواد الخام عبر ربط الوصفات بالمخزون وتنبيهات انخفاض الكميات."
+        },
+        "salesAnalytics": {
+          "title": "تحليلات المبيعات",
+          "description": "رؤى لحظية حول الأصناف الأكثر مبيعا وساعات الذروة ونمو الأعمال."
+        },
+        "kds": {
+          "title": "شاشة المطبخ (KDS)",
+          "description": "إرسال الطلبات مباشرة إلى المطبخ في الوقت الحقيقي لتقليل الأخطاء وتسريع التحضير."
+        },
+        "customerLoyalty": {
+          "title": "ولاء العملاء",
+          "description": "إدارة برامج النقاط والخصومات والحملات التسويقية بسهولة."
+        },
+        "staffManagement": {
+          "title": "إدارة الموظفين",
+          "description": "متابعة الحضور وإدارة الورديات وتحديد صلاحيات الوصول حسب الدور."
+        },
+        "multiStore": {
+          "title": "إدارة متعددة الفروع",
+          "description": "تحكم بجميع فروعك من لوحة واحدة مع تقارير وتسعير مركزي."
+        },
+        "offlineMode": {
+          "title": "وضع عدم الاتصال",
+          "description": "استمر في الفوترة حتى عند انقطاع الإنترنت مع مزامنة تلقائية عند العودة."
+        }
+      }
+    },
+    "growth": {
+      "imageAltDineIn": "تجربة متميزة داخل المطعم",
+      "imageAltChef": "طاه يحضر الطعام",
+      "heading": "وحدات مصممة للنمو",
+      "moduleDineIn": {
+        "title": "تميز الخدمة داخل المطعم",
+        "description": "إدارة تفاعلية للطاولات عبر خرائط مرئية مع دعم تقسيم الفاتورة ونقل الطاولات بسهولة."
+      },
+      "moduleDelivery": {
+        "title": "توصيل سلس",
+        "description": "تكامل مباشر مع منصات التوصيل لإدارة كل الطلبات الإلكترونية من شاشة واحدة."
+      },
+      "moduleAnalytics": {
+        "title": "تحليلات دقيقة",
+        "description": "تقارير يومية عن أفضل الأطباق مبيعا وساعات الذروة وأداء فريق الخدمة."
+      },
+      "floorControlBadge": "إدارة القاعة",
+      "floorControlHeading": "خريطة أرضية تفاعلية",
+      "floorControlDescription": "راقب قاعتك لحظيا بتحديثات حالة ملوّنة لمعرفة الطاولات المتاحة أو المشغولة أو المتأخرة بسهولة.",
+      "statusAvailable": "متاحة",
+      "statusOccupied": "مشغولة",
+      "statusDirty": "تنظيف / تأخير",
+      "mainDiningArea": "منطقة الطعام الرئيسية"
+    }
+  },
+  "components": {
+    "cta": {
+      "headingLine1": "هل أنت مستعد لتطوير",
+      "headingLine2": "عمليات عملك؟",
+      "descriptionLine1": "انضم إلى أكثر من 10,000 شركة تستخدم زايكا بوس لأتمتة",
+      "descriptionLine2": "سير العمل وزيادة رضا العملاء.",
+      "startTrial": "ابدأ تجربة مجانية",
+      "contactSales": "تواصل مع المبيعات"
+    },
+    "footer": {
+      "description": "نظام تشغيل متميز للتجارة الحديثة. مصمم للدقة وقابل للتوسع.",
+      "website": "الموقع",
+      "community": "المجتمع",
+      "share": "مشاركة",
+      "product": "المنتج",
+      "integrations": "التكاملات",
+      "apiDocs": "توثيق API",
+      "company": "الشركة",
+      "aboutUs": "من نحن",
+      "careers": "الوظائف",
+      "pressKit": "الملف الإعلامي",
+      "contactSales": "تواصل مع المبيعات",
+      "support": "الدعم",
+      "documentation": "التوثيق",
+      "helpCenter": "مركز المساعدة",
+      "statusPage": "حالة الخدمة",
+      "copyright": "© 2024 Ethereal Workhorse. جميع الحقوق محفوظة.",
+      "security": "الأمان"
+    },
+    "cardIcon": {
+      "servicesHeading": "خدماتنا",
+      "viewMore": "عرض المزيد",
+      "hideCards": "إخفاء البطاقات",
+      "cards": [
+        { "title": "الفوترة", "description": "أنشئ فواتير GST مخصصة بأكثر من 10 صيغ وشاركها مع العملاء عبر واتساب." },
+        { "title": "المخزون", "description": "تتبع المخزون بالكامل مع الأرقام التسلسلية والدفعات وتواريخ الانتهاء وتقارير العناصر." },
+        { "title": "المحاسبة", "description": "سجل وأدر وتتبع أنشطة عملك رقميا مع تقارير محاسبية شاملة." },
+        { "title": "تقارير GST", "description": "أنشئ تقارير GSTR1 وGSTR2 وGSTR3B وGSTR9 وتقارير تفصيلية بسهولة." },
+        { "title": "الرواتب", "description": "إدارة الرواتب وتوزيع الأجور بسلاسة." },
+        { "title": "المصروفات", "description": "تتبع مصروفات العمل لتحسين الربحية." },
+        { "title": "إصدار الفواتير", "description": "أنشئ الفواتير وشاركها رقميا." },
+        { "title": "التقارير", "description": "أنشئ تقارير مخصصة لتحليل اتجاهات العمل." },
+        { "title": "الرواتب", "description": "إدارة الرواتب وتوزيع الأجور بسلاسة." },
+        { "title": "المصروفات", "description": "تتبع مصروفات العمل لتحسين الربحية." },
+        { "title": "إصدار الفواتير", "description": "أنشئ الفواتير وشاركها رقميا." },
+        { "title": "التقارير", "description": "أنشئ تقارير مخصصة لتحليل اتجاهات العمل." }
+      ]
+    }
+  },
+  "pages": {
+    "reservations": {
+      "backToHome": "العودة إلى الرئيسية",
+      "badge": "الحجوزات",
+      "heading": "احجز طاولتك في زايكا",
+      "description": "اختر الموعد المناسب للغداء أو العشاء. اتصل بنا للحجوزات الجماعية والمناسبات الخاصة.",
+      "statusAvailable": "متاح",
+      "statusLimited": "محدود",
+      "reserveButton": "احجز طاولة",
+      "callButton": "اتصل بالمطعم"
+    },
+    "ourStory": {
+      "backToHome": "العودة إلى الرئيسية",
+      "badge": "قصتنا",
+      "heading": "رحلة زايكا",
+      "description": "تم إنشاء زايكا لدمج الطعم الأصيل مع راحة تناول الطعام الحديثة. من اختيار المكونات حتى التقديم النهائي، كل تفصيلة مصممة لتقديم تجربة مميزة.",
+      "today": "اليوم",
+      "milestone2018": "بدأنا كمطبخ صغير بقيادة الطهاة يركز على النكهات الحرفية.",
+      "milestone2020": "توسعنا إلى تجربة تناول طعام متكاملة وتجارب تذوق مختارة.",
+      "milestone2023": "أطلقنا الطلب الرقمي وبنينا مجتمع عملاء أوفياء.",
+      "milestoneToday": "نقدم مأكولات هندية وعالمية عصرية بجودة وثبات."
+    },
+    "contact": {
+      "successAlert": "تم إرسال الرسالة بنجاح!",
+      "errorPrefix": "خطأ",
+      "genericError": "حدث خطأ ما",
+      "failedAlert": "فشل إرسال الرسالة. حاول مرة أخرى.",
+      "getInTouch": "تواصل معنا",
+      "headingLine1": "هل أنت مستعد للتحدث",
+      "headingLine2": "معنا؟",
+      "emailLabel": "البريد الإلكتروني",
+      "sendUsMessage": "أرسل لنا رسالة",
+      "placeholderName": "أدخل اسمك",
+      "placeholderPhone": "أدخل رقم هاتفك",
+      "placeholderBusiness": "صف نشاطك التجاري",
+      "sendMessage": "إرسال الرسالة"
+    },
+    "featureDetail": {
+      "notFoundTitle": "الميزة غير موجودة",
+      "notFoundDescription": "الميزة التي تبحث عنها غير موجودة أو غير مفعلة حاليا.",
+      "featuredBadge": "حل مميز",
+      "bookDemo": "احجز عرضا تجريبيا",
+      "contactSales": "تواصل مع المبيعات",
+      "overview": "نظرة عامة",
+      "features": {
+        "multi-store": {
+          "title": "إدارة متعددة الفروع",
+          "shortDescription": "تحكم بجميع فروعك من لوحة واحدة.",
+          "description": "تحكم بجميع فروعك من لوحة واحدة مع تقارير وتسعير مركزي."
+        }
+      }
+    },
+    "pricing": {
+      "monthly": "شهري",
+      "yearly": "سنوي",
+      "mostPopular": "الأكثر شيوعا",
+      "perMonth": "/شهر",
+      "compareEveryFeature": "قارن كل ميزة",
+      "feature": "الميزة",
+      "basic": "أساسي",
+      "pro": "احترافي",
+      "enterprise": "مؤسسات",
+      "headerBadgeText": "خطط الأسعار",
+      "headingPrefix": "بسيطة وشفافة",
+      "headingHighlight": "أسعار {{country}}.",
+      "subtitle": "اختر الخطة المثالية لأعمال التجزئة الخاصة بك. من الشركات الناشئة السريعة إلى العمليات المؤسسية العالمية.",
+      "yearlySavingsText": "وفر 20%",
+      "trustBadges": {
+        "No credit card required": "لا يلزم وجود بطاقة ائتمان",
+        "Cancel anytime": "الإلغاء في أي وقت"
+      },
+      "plans": {
+        "Basic": {
+          "name": "أساسي",
+          "description": "للشركات الناشئة ذات المتجر الواحد.",
+          "buttonText": "ابدأ مجانا",
+          "features": {
+            "Up to 1 store": "متجر واحد كحد أقصى",
+            "Standard support": "دعم قياسي",
+            "2GB Storage": "مساحة تخزين 2 جيجابايت"
+          }
+        },
+        "Pro": {
+          "name": "احترافي",
+          "description": "للفرق المهنية التي تتوسع.",
+          "buttonText": "ترقية إلى برو",
+          "features": {
+            "Unlimited products": "منتجات غير محدودة",
+            "Priority support": "دعم ذو أولوية",
+            "50GB Storage": "مساحة تخزين 50 جيجابايت",
+            "Custom branding": "علامة تجارية مخصصة"
+          }
+        },
+        "Enterprise": {
+          "name": "مؤسسات",
+          "description": "للمنظمات كبيرة الحجم.",
+          "buttonText": "اتصل بالمبيعات",
+          "features": {
+            "Dedicated Account Manager": "مدير حساب مخصص",
+            "SSO and SAML Login": "تسجيل الدخول الموحد (SSO) و SAML",
+            "Unlimited Storage": "مساحة تخزين غير محدودة",
+            "Custom API limits": "حدود تطبيق برمجية مخصصة"
+          }
+        },
+        "custom": {
+          "name": "مخصص",
+          "description": "مخصص بالكامل",
+          "buttonText": "ترقية إلى مخصص",
+          "features": {
+            "custom products": "منتجات مخصصة",
+            "pay as you go": "دفع حسب الاستخدام",
+            "support 24/7": "دعم 24/7"
+          }
+        }
+      },
+      "comparison": {
+        "categories": {
+          "WORKSPACE & USAGE": "مساحة العمل والاستخدام",
+          "CORE CAPABILITIES": "القدرات الأساسية",
+          "SUPPORT & SECURITY": "الدعم والأمان"
+        },
+        "items": {
+          "Monthly active users": "المستخدمون النشطون شهريا",
+          "Total Stores": "إجمالي المتاجر",
+          "Staff per store": "الموظفون لكل متجر",
+          "Custom Branding": "علامة تجارية مخصصة",
+          "Advanced Analytics": "تحليلات متقدمة",
+          "API Access": "وصول API",
+          "SLA Guarantee": "ضمان مستوى الخدمة (SLA)",
+          "Security Audits": "تدقيق الأمان",
+          "Support": "الدعم",
+          "Monthly active users_value": "{{value}}",
+          "Total Stores_value": "{{value}}",
+          "Staff per store_value": "{{value}}",
+          "API Access_value": "{{value}}",
+          "Support_value": "{{value}}"
+        }
+      }
+    },
+    "partner": {
+      "successAlert": "تم إرسال الرسالة بنجاح!",
+      "errorPrefix": "خطأ",
+      "genericError": "حدث خطأ ما",
+      "failedAlert": "فشل إرسال الرسالة. حاول مرة أخرى.",
+      "heroHeadingLine1": "انضم إلى +27,000 من",
+      "heroHeadingLine2": "شركاء زايكابوس حول العالم",
+      "point1": "انضم إلى Vyapar، أسرع برنامج فواتير ومحاسبة نموا للأعمال الصغيرة",
+      "point2": "بدون استثمار وبدون بنية تحتية مطلوبة",
+      "point3": "تسوية المدفوعات أسبوعيا",
+      "sendUsMessage": "أرسل لنا رسالة",
+      "placeholderPincode": "أدخل الرمز البريدي",
+      "faqHeading": "الأسئلة الشائعة",
+      "services": [
+        {
+          "title": "تطوير تطبيقات الجوال",
+          "description": "تطوير تطبيقات الجوال هو عملية بناء تطبيقات تعمل على الأجهزة المحمولة."
+        },
+        {
+          "title": "تطوير المواقع",
+          "description": "يشمل تطوير المواقع بناء المواقع وإنشاءها وصيانتها بشكل مستمر."
+        },
+        {
+          "title": "حلول التجارة الإلكترونية",
+          "description": "ننشئ منصات تجارة إلكترونية مناسبة لنموذج أعمالك."
+        }
+      ],
+      "faqs": [
+        { "question": "هل يمكنني الحصول على اعتمادات إضافية؟", "answer": "نعم، يمكنك شراء اعتمادات إضافية في أي وقت." },
+        { "question": "هل يمكنني تغيير الخطة لاحقا؟", "answer": "بالتأكيد! يمكنك الترقية أو التخفيض في أي وقت." },
+        { "question": "ماذا لو قررت الإلغاء؟", "answer": "يمكنك إلغاء الاشتراك دون أي رسوم إضافية." },
+        { "question": "هل تنتقل الاعتمادات غير المستخدمة للشهر القادم؟", "answer": "لا، الاعتمادات غير المستخدمة لا تنتقل." },
+        { "question": "هل خدمة الدفع آمنة؟", "answer": "نعم، نستخدم خدمات دفع آمنة ومشفرة." }
+      ]
+    },
+    "outlet": {
+      "loading": "جار التحميل...",
+      "typewriter1": "اكتشف الأفضل!",
+      "typewriter2": "مصمم لاحتياجاتك!",
+      "typewriter3": "ارتق بتجربتك!",
+      "heroDescription": "استمتع بأفضل خدمات {{name}} المصممة خصيصا لاحتياجاتك.",
+      "exploreButton": "استكشف {{name}}",
+      "setupHeading": "كيفية إعداد نشاط الفوترة على تطبيق زايكابوس",
+      "servicesHeadingPrefix": "ما هي",
+      "servicesHeadingHighlight": "الخدمات",
+      "servicesHeadingSuffix": "التي نقدمها",
+      "servicesDescription": "نقوم بتطوير وصيانة المواقع وتطبيقات الجوال (Android و iOS) وبرامج سطح المكتب والألعاب ومتاجر التجارة الإلكترونية.",
+      "bestDealsPrefix": "أفضل",
+      "bestDealsHighlight": "العروض",
+      "bestDealsSuffix": "لك",
+      "addToCart": "أضف إلى السلة",
+      "faqHeading": "الأسئلة الشائعة",
+      "downloadApp": "حمّل التطبيق",
+      "services": [
+        { "title": "تطوير تطبيقات الجوال", "description": "تطوير تطبيقات Android و iOS بمعايير عالمية." },
+        { "title": "تطوير البرمجيات", "description": "برامج سطح مكتب للفوترة أو لأغراض الأعمال الأخرى." },
+        { "title": "التسويق الرقمي", "description": "الترويج لنشاطك على منصات مثل فيسبوك وإنستغرام وجوجل وغيرها." },
+        { "title": "تطوير المواقع", "description": "تصميم مواقع للأعمال والاستخدام الشخصي والمهني." },
+        { "title": "متاجر التجارة الإلكترونية", "description": "نصمم منصات تجارة إلكترونية مناسبة لنموذج عملك." },
+        { "title": "تطوير الألعاب", "description": "تصميم وتطوير ألعاب للهواتف وسطح المكتب." }
+      ],
+      "faqs": [
+        { "question": "هل يمكنني الحصول على اعتمادات إضافية؟", "answer": "نعم، يمكنك شراء اعتمادات إضافية في أي وقت." },
+        { "question": "هل يمكنني تغيير الخطة لاحقا؟", "answer": "بالتأكيد! يمكنك الترقية أو التخفيض في أي وقت." },
+        { "question": "ماذا لو قررت الإلغاء؟", "answer": "يمكنك إلغاء الاشتراك دون أي رسوم إضافية." },
+        { "question": "هل تنتقل الاعتمادات غير المستخدمة للشهر القادم؟", "answer": "لا، الاعتمادات غير المستخدمة لا تنتقل." },
+        { "question": "هل خدمة الدفع آمنة؟", "answer": "نعم، نستخدم خدمات دفع آمنة ومشفرة." }
+      ]
+    },
+    "homeStandalone": {
+      "footerDescription": "نعيد تعريف تجربة الطعام الرقمية بدقة وشغف وجودة تقديم استثنائية.",
+      "partnerWithUs": "شارك معنا",
+      "blog": "المدونة",
+      "safety": "السلامة",
+      "terms": "الشروط",
+      "downloadOurApp": "حمّل تطبيقنا",
+      "downloadOn": "حمّل من",
+      "appStore": "App Store",
+      "getItOn": "متوفر على",
+      "googlePlay": "Google Play",
+      "copyright": "© 2024 زايكا. جميع الحقوق محفوظة.",
+      "inspiration": "إلهام لطلبك الأول",
+      "topPicks": "أفضل الاختيارات",
+      "trendingDelicacies": "أطباق رائجة",
+      "exploreAll": "استكشف الكل",
+      "signatureMenu": "استكشف قائمتنا المميزة",
+      "viewFullMenu": "عرض القائمة الكاملة"
+    }
+  },
+  "qr": {
+    "dashboard": {
+      "heading": "مدفوعات UPI QR",
+      "subtitle": "إنشاء وإدارة ومشاركة رموز QR لمدفوعات UPI",
+      "quick_qr": "QR سريع",
+      "quick_qr_desc": "أدخل المبلغ وأنشئ رمز QR فورًا",
+      "calculator": "آلة حاسبة QR",
+      "calculator_desc": "استخدم لوحة المفاتيح لحساب المبلغ وإنشاء QR",
+      "your_upis": "معرّفات UPI",
+      "your_upis_desc": "عرض وإدارة معرّفات UPI المحفوظة",
+      "add_new": "إضافة UPI جديد",
+      "add_new_desc": "تسجيل معرّف UPI جديد للمدفوعات"
+    },
+    "quick": {
+      "heading": "منشئ QR السريع",
+      "amount_label": "أدخل المبلغ (₹)",
+      "amount_placeholder": "مثال: 500",
+      "select_upi": "اختر UPI",
+      "no_upi": "لا توجد معرّفات UPI محفوظة",
+      "add_upi_prompt": "أضف معرّف UPI للبدء",
+      "preview_heading": "معاينة QR",
+      "scan_hint": "امسح رمز QR هذا للدفع",
+      "amount_display": "المبلغ",
+      "upi_display": "معرّف UPI",
+      "name_display": "الاسم",
+      "download": "تنزيل QR",
+      "share": "مشاركة QR",
+      "copied": "تم نسخ الرابط!",
+      "no_qr": "أدخل المبلغ واختر UPI لإنشاء QR"
+    },
+    "calculator": {
+      "heading": "آلة حاسبة QR",
+      "display_label": "المبلغ (₹)",
+      "preview_heading": "معاينة QR المباشرة",
+      "no_qr": "أدخل مبلغًا باستخدام لوحة المفاتيح"
+    },
+    "upis": {
+      "heading": "إدارة معرّفات UPI",
+      "subtitle": "إضافة أو حذف أو تعيين معرّف UPI الافتراضي",
+      "add_btn": "إضافة UPI",
+      "empty_heading": "لا توجد معرّفات UPI بعد",
+      "empty_desc": "أضف أول معرّف UPI لبدء إنشاء رموز QR",
+      "default_badge": "افتراضي",
+      "set_default": "تعيين كافتراضي",
+      "delete": "حذف",
+      "confirm_delete": "حذف معرّف UPI هذا؟"
+    },
+    "modal": {
+      "title": "إضافة معرّف UPI",
+      "name_label": "الاسم المعروض",
+      "name_placeholder": "مثال: حساب عملي",
+      "upi_label": "معرّف UPI",
+      "upi_placeholder": "مثال: yourname@upi",
+      "error_name": "الاسم مطلوب",
+      "error_upi": "يجب أن يحتوي معرّف UPI على '@'",
+      "save": "حفظ UPI",
+      "cancel": "إلغاء"
+    }
+  }
+}
