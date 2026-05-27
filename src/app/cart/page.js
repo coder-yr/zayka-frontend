@@ -223,9 +223,9 @@ export default function CartPage() {
                 <span className="text-3xl font-bold text-gray-900">${total.toFixed(2)}</span>
               </div>
 
-              <button className="w-full bg-[#D92B2B] text-white font-bold text-[17px] py-4 rounded-xl hover:bg-red-700 transition-colors shadow-lg shadow-red-500/20 mb-8" type="button">
+              <Link href="/checkout" className="w-full block text-center bg-[#D92B2B] text-white font-bold text-[17px] py-4 rounded-xl hover:bg-red-700 transition-colors shadow-lg shadow-red-500/20 mb-8">
                 {t("proceed_to_checkout")}
-              </button>
+              </Link>
 
               <div className="flex items-center justify-center gap-4 text-gray-400">
                 <CreditCard className="w-6 h-6" />

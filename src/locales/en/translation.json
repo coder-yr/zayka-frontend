@@ -484,5 +484,37 @@
       "save": "Save UPI",
       "cancel": "Cancel"
     }
+  },
+  "restaurant": {
+    "hero": {
+      "badge": "CRAFTING CULINARY MOMENTS",
+      "heading1": "Where Passion Meets",
+      "headingHighlight": "Flavour",
+      "subheading": "Experience modern culinary art with hand-sourced ingredients and recipes crafted to tell a story.",
+      "cta_menu": "Explore Our Menu",
+      "cta_table": "Book a Table"
+    },
+    "offers": {
+      "title": "Exclusive Dining Offers",
+      "subtitle": "Unlock premium culinary perks and limited-edition dishes.",
+      "claim": "Claim Offer",
+      "coupon": "Use Code:"
+    },
+    "testimonials": {
+      "title": "What Our Guests Say",
+      "subtitle": "Stories of memorable dining and handcrafted hospitality from our community."
+    },
+    "faqs": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about Zayka reservations, catering, and menus."
+    },
+    "qr_menu": {
+      "heading": "Smart Table Service",
+      "subheading": "Order directly from your table using our instant QR digital menu system.",
+      "scan_prompt": "Simulate Table QR Scan",
+      "table_label": "Table",
+      "placed_success": "Order placed successfully! We've sent Table {{table}}'s order to the kitchen.",
+      "bill_payment": "Proceed to Table Bill UPI Payment"
+    }
   }
 }

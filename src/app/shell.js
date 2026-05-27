@@ -15,9 +15,9 @@ export default function AppShell({ children }) {
   const [language, setLanguage] = useState("en");
   const [ready, setReady] = useState(false);
   const pathname = usePathname();
-  const isHomePage = pathname === "/home";
-  const isKioskPage = pathname === "/kiosk";
-  const showLayoutWrappers = !isHomePage && !isKioskPage;
+  const isKioskOrPosPage = pathname === "/kiosk" || pathname === "/pos" || pathname.startsWith("/pos/");
+  const showLayoutWrappers = !isKioskOrPosPage;
+  const showStickySubmenu = showLayoutWrappers && pathname.startsWith("/features/");
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
@@ -59,7 +59,7 @@ export default function AppShell({ children }) {
       <FeatureProvider>
         <CartProvider>
           {showLayoutWrappers && <Navbar toggleTheme={toggleTheme} theme={theme} />}
-          {showLayoutWrappers && <StickySubmenu />}
+          {showStickySubmenu && <StickySubmenu />}
           {children}
           {showLayoutWrappers && <Footer />}
         </CartProvider>

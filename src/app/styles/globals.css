@@ -48,3 +48,47 @@ html, body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ─── POS Receipt Print Styles ────────────────────────────────────────── */
+@media print {
+  @page {
+    margin: 0;
+    size: 80mm 297mm; /* Standard 80mm thermal receipt width */
+  }
+
+  body {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  /* Target only the receipt container in the POS page */
+  #printable-receipt {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 2mm;
+    font-family: monospace, "Courier New", Courier;
+    color: black !important;
+    background: white !important;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  /* Force background colors on thermal prints (though some printers ignore this) */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide UI elements that shouldn't print */
+  #printable-receipt .no-print {
+    display: none !important;
+  }
+}
