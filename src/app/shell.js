@@ -9,14 +9,15 @@ import StickySubmenu from "./components/Home/StickySubmenu";
 import Footer from "./components/common/Footer";
 import { FeatureProvider } from "@/context/FeatureContext";
 import { CartProvider } from "@/context/CartContext";
+import { AuthProvider } from "@/context/AuthContext";
 
 export default function AppShell({ children }) {
   const [theme, setTheme] = useState("light");
   const [language, setLanguage] = useState("en");
   const [ready, setReady] = useState(false);
   const pathname = usePathname();
-  const isKioskOrPosPage = pathname === "/kiosk" || pathname === "/pos" || pathname.startsWith("/pos/");
-  const showLayoutWrappers = !isKioskOrPosPage;
+  const isKioskOrPosOrAuthPage = pathname === "/kiosk" || pathname === "/pos" || pathname.startsWith("/pos/") || pathname === "/auth" || pathname.startsWith("/auth/");
+  const showLayoutWrappers = !isKioskOrPosOrAuthPage;
   const showStickySubmenu = showLayoutWrappers && pathname.startsWith("/features/");
 
   useEffect(() => {
@@ -56,14 +57,16 @@ export default function AppShell({ children }) {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <FeatureProvider>
-        <CartProvider>
-          {showLayoutWrappers && <Navbar toggleTheme={toggleTheme} theme={theme} />}
-          {showStickySubmenu && <StickySubmenu />}
-          {children}
-          {showLayoutWrappers && <Footer />}
-        </CartProvider>
-      </FeatureProvider>
+      <AuthProvider>
+        <FeatureProvider>
+          <CartProvider>
+            {showLayoutWrappers && <Navbar toggleTheme={toggleTheme} theme={theme} />}
+            {showStickySubmenu && <StickySubmenu />}
+            {children}
+            {showLayoutWrappers && <Footer />}
+          </CartProvider>
+        </FeatureProvider>
+      </AuthProvider>
     </I18nextProvider>
   );
 }
